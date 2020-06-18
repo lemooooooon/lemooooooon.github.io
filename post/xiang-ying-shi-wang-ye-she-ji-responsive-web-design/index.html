@@ -1,0 +1,217 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>响应式网页设计（Responsive Web Design） | Gridea</title>
+<link rel="shortcut icon" href="https://lemooooooon.github.io/favicon.ico?v=1592472193344">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://lemooooooon.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="响应式网页设计（Responsive Web Design） | Gridea - Atom Feed" href="https://lemooooooon.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="从大屏的台式电脑到小屏的手机，这些设备有着不同的屏幕尺寸、分辨率和处理能力。响应式 Web 设计是一种能自动响应不同尺寸设备的设计方法。实现这一切的核心要素是：媒介查询（Media Query）。如果你预计网站的大部分流量来自移动端，那么应..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://lemooooooon.github.io">
+  <img class="avatar" src="https://lemooooooon.github.io/images/avatar.png?v=1592472193344" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    Drying my clothes here.
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              响应式网页设计（Responsive Web Design）
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-06-18
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>从大屏的台式电脑到小屏的手机，这些设备有着不同的屏幕尺寸、分辨率和处理能力。响应式 Web 设计是一种能自动响应<strong>不同尺寸设备</strong>的设计方法。实现这一切的核心要素是：<strong>媒介查询</strong>（Media Query）。如果你预计网站的大部分流量来自移动端，那么应该采取“移动端优先”的策略，再为PC端做兼容，反之亦然。</p>
+<h3 id="创建一个媒介查询"><strong>创建一个媒介查询</strong></h3>
+<p>媒体查询是 CSS3 中引入的一项新技术，它可以根据不同的可视窗口大小显示不同的布局。可视窗口是用户在网页上的可见区域，根据访问网站的设备不同而不同。<br>
+媒体查询由媒体类型组成，如果媒体类型与展示网页的设备类型匹配，则应用对应的样式。你可以在媒体查询中用上你想用的选择器和样式。</p>
+<p>下面是一个媒体查询的例子，当设备宽度小于或等于 100px 时返回内容：<br>
+@media (max-width: 100px) { /* CSS Rules <em>/ }<br>
+以下定义的媒体查询，是当设备高度大于或等于 350px 时返回内容：<br>
+@media (min-height: 350px) { /</em> CSS Rules */ }<br>
+只有当媒体类型与当前设备匹配时，才应用媒体查询中的 CSS。</p>
+<pre><code>p {
+font-size: 20px;
+}
+@media(max-height:800px){
+p{
+font-size:12px;
+}
+}
+</code></pre>
+<h3 id="使图片根据设备尺寸自如响应"><strong>使图片根据设备尺寸自如响应</strong></h3>
+<p>用 CSS 来让图片自适应其实很简单。<strong>不要使用绝对单位</strong>：</p>
+<pre><code>img { width: 720px; }
+</code></pre>
+<p>你应该使用：</p>
+<pre><code>img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+</code></pre>
+<p>max-width属性能让图片以 100% 的最大宽度适应其父容器的宽度，但图片不会拉伸得比原始宽度还宽。将 display属性设置为 block可以让 image 标签从内联元素（默认值）更改为块级元素。设置<strong>height</strong>属性为** auto** 保持图片的原始宽高比。</p>
+<h3 id="针对高分辨率屏幕应使用视网膜图片"><strong>针对高分辨率屏幕应使用视网膜图片</strong></h3>
+<p>为优化图片在高分辨率设备下的显示效果，最简单的方式是定义它们的 <strong>width</strong>和** height<strong>值为源文件</strong>宽高的一半**。</p>
+<h3 id="使排版根据设备尺寸自如响应"><strong>使排版根据设备尺寸自如响应</strong></h3>
+<p>除了用 em或 px去设置文本大小, 你还可以用视窗单位来做响应式排版。视窗单位还有百分比，它们都是相对单位，但却基于不同的参照物。视窗单位相对于设备的视窗尺寸 (宽度或高度) ，百分比是相对于父级元素的大小。<br>
+四个不同的视窗单位分别是：<br>
+• vw：如 10vw的意思是视窗宽度的 10%。<br>
+• vh：如 3vh的意思是视窗高度的 3%。<br>
+• vmin：如 70vmin的意思是视窗中较小尺寸的 70% (高度 VS 宽度)。<br>
+• vmax：如 100vmax的意思是视窗中较大尺寸的 100% (高度 VS 宽度)。</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AA%92%E4%BB%8B%E6%9F%A5%E8%AF%A2"><strong>创建一个媒介查询</strong></a></li>
+<li><a href="#%E4%BD%BF%E5%9B%BE%E7%89%87%E6%A0%B9%E6%8D%AE%E8%AE%BE%E5%A4%87%E5%B0%BA%E5%AF%B8%E8%87%AA%E5%A6%82%E5%93%8D%E5%BA%94"><strong>使图片根据设备尺寸自如响应</strong></a></li>
+<li><a href="#%E9%92%88%E5%AF%B9%E9%AB%98%E5%88%86%E8%BE%A8%E7%8E%87%E5%B1%8F%E5%B9%95%E5%BA%94%E4%BD%BF%E7%94%A8%E8%A7%86%E7%BD%91%E8%86%9C%E5%9B%BE%E7%89%87"><strong>针对高分辨率屏幕应使用视网膜图片</strong></a></li>
+<li><a href="#%E4%BD%BF%E6%8E%92%E7%89%88%E6%A0%B9%E6%8D%AE%E8%AE%BE%E5%A4%87%E5%B0%BA%E5%AF%B8%E8%87%AA%E5%A6%82%E5%93%8D%E5%BA%94"><strong>使排版根据设备尺寸自如响应</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://lemooooooon.github.io/post/css-ji-chu-yu-fa/">
+              <h3 class="post-title">
+                CSS基础语法
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://lemooooooon.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
