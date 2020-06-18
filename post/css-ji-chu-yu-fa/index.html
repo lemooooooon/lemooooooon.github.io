@@ -2,23 +2,28 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CSS介绍 | Gridea</title>
+<title>CSS基础语法 | Gridea</title>
 <link rel="shortcut icon" href="https://lemooooooon.github.io/favicon.ico?v=1592450790712">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://lemooooooon.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="CSS介绍 | Gridea - Atom Feed" href="https://lemooooooon.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="CSS基础语法 | Gridea - Atom Feed" href="https://lemooooooon.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="CSS （ Cascading Style Sheet）层叠样式表，主要用来控制网页的样式。
-CSS 的选择器区分大小写，因此要谨慎使用大写。
-CSS 允许控制以下样式：
-{
-颜色 color
-背景 background
-字体 font
-位..." />
+    <meta name="description" content="
+
+CSS样式继承：和JS的作用域链一样，一层一层往外找。当样式发生冲突，选用最后
+声明的样式。
+
+
+样式优先级：！important ＞ 行内样式 ＞ id选择器 ＞ class选择器
+
+
+可以为背景提供一个备选颜色，有利于调试。
+
+
+T..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -81,39 +86,101 @@ CSS 允许控制以下样式：
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              CSS介绍
+              CSS基础语法
             </h2>
             <div class="post-info">
               <span>
                 2020-06-18
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>CSS （ Cascading Style Sheet）层叠样式表，主要用来控制网页的样式。</p>
-<p>CSS 的选择器区分大小写，因此要谨慎使用大写。</p>
-<p>CSS 允许控制以下样式：<br>
+                <ul>
+<li>
+<p>CSS<strong>样式继承</strong>：和JS的作用域链一样，一层一层往外找。当样式发生冲突，选用最后<br>
+声明的样式。</p>
+</li>
+<li>
+<p>样式<strong>优先级</strong>：！important ＞ 行内样式 ＞ id选择器 ＞ class选择器</p>
+</li>
+<li>
+<p>可以为背景提供一个<strong>备选颜色</strong>，有利于调试。</p>
+</li>
+<li>
+<p>Text-align : justify--让每行的左右两端都紧贴行的边缘。</p>
+</li>
+<li>
+<p>一些简单的标签：<br>
 {<br>
-颜色 color<br>
-背景 background<br>
-字体 font<br>
-位置 position<br>
-显示 display<br>
-边框 border<br>
-内边距 padding<br>
-外边距 margin<br>
-行高 line-height<br>
-装饰 text-decoration<br>
-过渡 transtion<br>
-变化 transform<br>
-动画 animation<br>
+strong：加粗文本；<br>
+u：添加下划线；<br>
+em：强调文本；<br>
+s：添加删除线；<br>
+hr：创建水平线（Horizontal Rule）,是个单标签。<br>
 }</p>
-<p>CSS 背后的思想是，通过选择器来定位 DOM（文档对象模型）的元素，然后将各种样式规则应用在元素上，从而改变元素在页面上的显示方式</p>
+</li>
+<li>
+<p><strong>box-shadow</strong>属性的每个阴影依次由下面这些值描述：<br>
+• offset-x阴影的水平偏移量；<br>
+• offset-y阴影的垂直偏移量;<br>
+• blur-radius模糊距离；<br>
+• spread-radius阴影尺寸；<br>
+• 颜色。<br>
+其中<strong>blur-raduis</strong>和<strong>spread-raduis</strong>是<strong>可选</strong>的。<br>
+下面是创建了多个阴影的 CSS 例子，阴影加了模糊效果，颜色是透明度很高的黑色:<br>
+box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);</p>
+</li>
+<li>
+<p>CSS 里的<strong>opacity</strong>属性用来设置元素的透明度。<br>
+值 1 代表完全不透明。<br>
+值 0.5 代表半透明。<br>
+值 0 代表完全透明。<br>
+透明度会应用到元素内的所有内容，不论是图片，还是文本，或是背景色。</p>
+</li>
+<li>
+<p>CSS 里面的<strong>text-transform</strong>属性来改变英文中字母的大小写。它通常用来统一页面里英文的显示，且无需直接改变 HTML 元素中的文本。<br>
+下面的表格展示了text-transform的不同值对文字 “Transform me” 的影响。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Value</th>
+<th style="text-align:left">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">lowercase</td>
+<td style="text-align:left">&quot;transform me&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">uppercase</td>
+<td style="text-align:left">&quot;TRANSFORM ME&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">capitalize</td>
+<td style="text-align:left">&quot;Transform Me&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">initial</td>
+<td style="text-align:left">使用默认值</td>
+</tr>
+<tr>
+<td style="text-align:left">inherit</td>
+<td style="text-align:left">使用父元素的text-transform值。</td>
+</tr>
+<tr>
+<td style="text-align:left">none</td>
+<td style="text-align:left">Default:不改变文字。</td>
+</tr>
+</tbody>
+</table>
 
               </div>
               <div class="toc-container">
@@ -126,9 +193,9 @@ CSS 允许控制以下样式：
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://lemooooooon.github.io/post/di-yi-pian-blog/">
+            <a href="https://lemooooooon.github.io/post/css-jie-shao/">
               <h3 class="post-title">
-                第一篇blog
+                CSS介绍
               </h3>
             </a>
           </div>

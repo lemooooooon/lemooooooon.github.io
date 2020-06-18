@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lemooooooon.github.io</id>
     <title>Gridea</title>
-    <updated>2020-06-18T02:59:10.381Z</updated>
+    <updated>2020-06-18T03:26:33.298Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lemooooooon.github.io"/>
     <link rel="self" href="https://lemooooooon.github.io/atom.xml"/>
@@ -10,6 +10,95 @@
     <logo>https://lemooooooon.github.io/images/avatar.png</logo>
     <icon>https://lemooooooon.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[CSS基础语法]]></title>
+        <id>https://lemooooooon.github.io/post/css-ji-chu-yu-fa/</id>
+        <link href="https://lemooooooon.github.io/post/css-ji-chu-yu-fa/">
+        </link>
+        <updated>2020-06-18T02:59:14.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>
+<p>CSS<strong>样式继承</strong>：和JS的作用域链一样，一层一层往外找。当样式发生冲突，选用最后<br>
+声明的样式。</p>
+</li>
+<li>
+<p>样式<strong>优先级</strong>：！important ＞ 行内样式 ＞ id选择器 ＞ class选择器</p>
+</li>
+<li>
+<p>可以为背景提供一个<strong>备选颜色</strong>，有利于调试。</p>
+</li>
+<li>
+<p>Text-align : justify--让每行的左右两端都紧贴行的边缘。</p>
+</li>
+<li>
+<p>一些简单的标签：<br>
+{<br>
+strong：加粗文本；<br>
+u：添加下划线；<br>
+em：强调文本；<br>
+s：添加删除线；<br>
+hr：创建水平线（Horizontal Rule）,是个单标签。<br>
+}</p>
+</li>
+<li>
+<p><strong>box-shadow</strong>属性的每个阴影依次由下面这些值描述：<br>
+• offset-x阴影的水平偏移量；<br>
+• offset-y阴影的垂直偏移量;<br>
+• blur-radius模糊距离；<br>
+• spread-radius阴影尺寸；<br>
+• 颜色。<br>
+其中<strong>blur-raduis</strong>和<strong>spread-raduis</strong>是<strong>可选</strong>的。<br>
+下面是创建了多个阴影的 CSS 例子，阴影加了模糊效果，颜色是透明度很高的黑色:<br>
+box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);</p>
+</li>
+<li>
+<p>CSS 里的<strong>opacity</strong>属性用来设置元素的透明度。<br>
+值 1 代表完全不透明。<br>
+值 0.5 代表半透明。<br>
+值 0 代表完全透明。<br>
+透明度会应用到元素内的所有内容，不论是图片，还是文本，或是背景色。</p>
+</li>
+<li>
+<p>CSS 里面的<strong>text-transform</strong>属性来改变英文中字母的大小写。它通常用来统一页面里英文的显示，且无需直接改变 HTML 元素中的文本。<br>
+下面的表格展示了text-transform的不同值对文字 “Transform me” 的影响。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Value</th>
+<th style="text-align:left">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">lowercase</td>
+<td style="text-align:left">&quot;transform me&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">uppercase</td>
+<td style="text-align:left">&quot;TRANSFORM ME&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">capitalize</td>
+<td style="text-align:left">&quot;Transform Me&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">initial</td>
+<td style="text-align:left">使用默认值</td>
+</tr>
+<tr>
+<td style="text-align:left">inherit</td>
+<td style="text-align:left">使用父元素的text-transform值。</td>
+</tr>
+<tr>
+<td style="text-align:left">none</td>
+<td style="text-align:left">Default:不改变文字。</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CSS介绍]]></title>
         <id>https://lemooooooon.github.io/post/css-jie-shao/</id>
