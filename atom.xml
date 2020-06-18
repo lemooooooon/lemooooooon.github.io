@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lemooooooon.github.io</id>
     <title>Gridea</title>
-    <updated>2020-06-18T09:23:15.748Z</updated>
+    <updated>2020-06-18T13:04:22.023Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lemooooooon.github.io"/>
     <link rel="self" href="https://lemooooooon.github.io/atom.xml"/>
@@ -95,8 +95,8 @@ hr：创建水平线（Horizontal Rule）,是个单标签。<br>
 • spread-radius阴影尺寸；<br>
 • 颜色。<br>
 其中<strong>blur-raduis</strong>和<strong>spread-raduis</strong>是<strong>可选</strong>的。<br>
-下面是创建了多个阴影的 CSS 例子，阴影加了模糊效果，颜色是透明度很高的黑色:<br>
-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);</p>
+下面是创建了多个阴影的 CSS 例子，阴影加了模糊效果，颜色是透明度很高的黑色:</p>
+<p>box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);</p>
 </li>
 <li>
 <p>CSS 里的<strong>opacity</strong>属性用来设置元素的透明度。<br>
