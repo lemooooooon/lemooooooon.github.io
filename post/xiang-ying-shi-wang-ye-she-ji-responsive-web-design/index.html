@@ -1,92 +1,100 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
+    <meta charset="utf-8" >
 
 <title>响应式网页设计（Responsive Web Design） | Gridea</title>
-<meta name="description" content="Drying my clothes here.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://lemooooooon.github.io/favicon.ico?v=1592647608054">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://lemooooooon.github.io/favicon.ico?v=1592647675267">
 <link rel="stylesheet" href="https://lemooooooon.github.io/styles/main.css">
 
 
 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
 
+    <meta name="description" content="从大屏的台式电脑到小屏的手机，这些设备有着不同的屏幕尺寸、分辨率和处理能力。响应式 Web 设计是一种能自动响应不同尺寸设备的设计方法。实现这一切的核心要素是：媒介查询（Media Query）。如果你预计网站的大部分流量来自移动端，那么应..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://lemooooooon.github.io">
-        <img class="avatar" src="https://lemooooooon.github.io/images/avatar.png?v=1592647608054" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://lemooooooon.github.io">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://lemooooooon.github.io">
+        <img src="https://lemooooooon.github.io/images/avatar.png?v=1592647675267" class="site-logo">
         <h1 class="site-title">Gridea</h1>
       </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
-  </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
+    <div>
       
         
-          <a href="/" class="menu purple-link">
+          <a href="/" class="site-nav">
             首页
           </a>
         
       
         
-          <a href="/archives" class="menu purple-link">
+          <a href="/archives" class="site-nav">
             归档
           </a>
         
       
         
-          <a href="/tags" class="menu purple-link">
+          <a href="/tags" class="site-nav">
             标签
           </a>
         
       
         
-          <a href="/post/about" class="menu purple-link">
+          <a href="/post/about" class="site-nav">
             关于
           </a>
         
       
     </div>
   </div>
-</transition>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Drying my clothes here.
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://lemooooooon.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
 
 
-      <div class="content-container">
-        <div class="post-detail">
-          
-          <h2 class="post-title">响应式网页设计（Responsive Web Design）</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2020-06-18</span>
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">响应式网页设计（Responsive Web Design）</h2>
+            <div class="post-date">2020-06-18</div>
             
-          </div>
-          <div class="post-content">
-            <p>从大屏的台式电脑到小屏的手机，这些设备有着不同的屏幕尺寸、分辨率和处理能力。响应式 Web 设计是一种能自动响应<strong>不同尺寸设备</strong>的设计方法。实现这一切的核心要素是：<strong>媒介查询</strong>（Media Query）。如果你预计网站的大部分流量来自移动端，那么应该采取“移动端优先”的策略，再为PC端做兼容，反之亦然。</p>
+            <div class="post-content" v-pre>
+              <p>从大屏的台式电脑到小屏的手机，这些设备有着不同的屏幕尺寸、分辨率和处理能力。响应式 Web 设计是一种能自动响应<strong>不同尺寸设备</strong>的设计方法。实现这一切的核心要素是：<strong>媒介查询</strong>（Media Query）。如果你预计网站的大部分流量来自移动端，那么应该采取“移动端优先”的策略，再为PC端做兼容，反之亦然。</p>
 <h3 id="创建一个媒介查询"><strong>创建一个媒介查询</strong></h3>
 <p>媒体查询是 CSS3 中引入的一项新技术，它可以根据不同的可视窗口大小显示不同的布局。可视窗口是用户在网页上的可见区域，根据访问网站的设备不同而不同。<br>
 媒体查询由媒体类型组成，如果媒体类型与展示网页的设备类型匹配，则应用对应的样式。你可以在媒体查询中用上你想用的选择器和样式。</p>
@@ -126,45 +134,31 @@ font-size:12px;
 • vmin：如 70vmin的意思是视窗中较小尺寸的 70% (高度 VS 宽度)。<br>
 • vmax：如 100vmax的意思是视窗中较大尺寸的 100% (高度 VS 宽度)。</p>
 
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://lemooooooon.github.io/post/css-ji-chu-yu-fa/">
+                  <h3 class="post-title">
+                    CSS基础语法
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
           </div>
+
         </div>
-
-        
-          <div class="next-post">
-            <a class="purple-link" href="https://lemooooooon.github.io/post/css-ji-chu-yu-fa/">
-              <h3 class="post-title">
-                下一篇：CSS基础语法
-              </h3>
-            </a>
-          </div>
-          
       </div>
-
-      
-
-      <div class="site-footer">
-  <div class="slogan">Drying my clothes here.</div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://lemooooooon.github.io/atom.xml" target="_blank">RSS</a>
-</div>
-
-
     </div>
-    <script type="application/javascript">
 
-hljs.initHighlightingOnLoad()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
 
 var app = new Vue({
   el: '#app',
@@ -174,6 +168,8 @@ var app = new Vue({
 })
 
 </script>
+
+
 
 
 
