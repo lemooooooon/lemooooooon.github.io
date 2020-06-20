@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lemooooooon.github.io</id>
     <title>Gridea</title>
-    <updated>2020-06-20T10:02:33.673Z</updated>
+    <updated>2020-06-20T10:04:10.651Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lemooooooon.github.io"/>
     <link rel="self" href="https://lemooooooon.github.io/atom.xml"/>
@@ -16,46 +16,6 @@
         <link href="https://lemooooooon.github.io/post/xiang-ying-shi-wang-ye-she-ji-responsive-web-design/">
         </link>
         <updated>2020-06-18T08:13:02.000Z</updated>
-        <content type="html"><![CDATA[<p>从大屏的台式电脑到小屏的手机，这些设备有着不同的屏幕尺寸、分辨率和处理能力。响应式 Web 设计是一种能自动响应<strong>不同尺寸设备</strong>的设计方法。实现这一切的核心要素是：<strong>媒介查询</strong>（Media Query）。如果你预计网站的大部分流量来自移动端，那么应该采取“移动端优先”的策略，再为PC端做兼容，反之亦然。</p>
-<h3 id="创建一个媒介查询"><strong>创建一个媒介查询</strong></h3>
-<p>媒体查询是 CSS3 中引入的一项新技术，它可以根据不同的可视窗口大小显示不同的布局。可视窗口是用户在网页上的可见区域，根据访问网站的设备不同而不同。<br>
-媒体查询由媒体类型组成，如果媒体类型与展示网页的设备类型匹配，则应用对应的样式。你可以在媒体查询中用上你想用的选择器和样式。</p>
-<p>下面是一个媒体查询的例子，当设备宽度小于或等于 100px 时返回内容：<br>
-@media (max-width: 100px) { /* CSS Rules <em>/ }<br>
-以下定义的媒体查询，是当设备高度大于或等于 350px 时返回内容：<br>
-@media (min-height: 350px) { /</em> CSS Rules */ }<br>
-只有当媒体类型与当前设备匹配时，才应用媒体查询中的 CSS。</p>
-<pre><code>p {
-font-size: 20px;
-}
-@media(max-height:800px){
-p{
-font-size:12px;
-}
-}
-</code></pre>
-<h3 id="使图片根据设备尺寸自如响应"><strong>使图片根据设备尺寸自如响应</strong></h3>
-<p>用 CSS 来让图片自适应其实很简单。<strong>不要使用绝对单位</strong>：</p>
-<pre><code>img { width: 720px; }
-</code></pre>
-<p>你应该使用：</p>
-<pre><code>img {
-  max-width: 100%;
-  display: block;
-  height: auto;
-}
-</code></pre>
-<p>max-width属性能让图片以 100% 的最大宽度适应其父容器的宽度，但图片不会拉伸得比原始宽度还宽。将 display属性设置为 block可以让 image 标签从内联元素（默认值）更改为块级元素。设置<strong>height</strong>属性为** auto** 保持图片的原始宽高比。</p>
-<h3 id="针对高分辨率屏幕应使用视网膜图片"><strong>针对高分辨率屏幕应使用视网膜图片</strong></h3>
-<p>为优化图片在高分辨率设备下的显示效果，最简单的方式是定义它们的 <strong>width</strong>和** height<strong>值为源文件</strong>宽高的一半**。</p>
-<h3 id="使排版根据设备尺寸自如响应"><strong>使排版根据设备尺寸自如响应</strong></h3>
-<p>除了用 em或 px去设置文本大小, 你还可以用视窗单位来做响应式排版。视窗单位还有百分比，它们都是相对单位，但却基于不同的参照物。视窗单位相对于设备的视窗尺寸 (宽度或高度) ，百分比是相对于父级元素的大小。<br>
-四个不同的视窗单位分别是：<br>
-• vw：如 10vw的意思是视窗宽度的 10%。<br>
-• vh：如 3vh的意思是视窗高度的 3%。<br>
-• vmin：如 70vmin的意思是视窗中较小尺寸的 70% (高度 VS 宽度)。<br>
-• vmax：如 100vmax的意思是视窗中较大尺寸的 100% (高度 VS 宽度)。</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[CSS基础语法]]></title>
@@ -63,88 +23,6 @@ font-size:12px;
         <link href="https://lemooooooon.github.io/post/css-ji-chu-yu-fa/">
         </link>
         <updated>2020-06-18T02:59:14.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>
-<p>CSS<strong>样式继承</strong>：和JS的作用域链一样，一层一层往外找。当样式发生冲突，选用最后<br>
-声明的样式。</p>
-</li>
-<li>
-<p>样式<strong>优先级</strong>：！important ＞ 行内样式 ＞ id选择器 ＞ class选择器</p>
-</li>
-<li>
-<p>可以为背景提供一个<strong>备选颜色</strong>，有利于调试。</p>
-</li>
-<li>
-<p>Text-align : justify--让每行的左右两端都紧贴行的边缘。</p>
-</li>
-<li>
-<p>一些简单的标签：<br>
-{<br>
-strong：加粗文本；<br>
-u：添加下划线；<br>
-em：强调文本；<br>
-s：添加删除线；<br>
-hr：创建水平线（Horizontal Rule）,是个单标签。<br>
-}</p>
-</li>
-<li>
-<p><strong>box-shadow</strong>属性的每个阴影依次由下面这些值描述：<br>
-• offset-x阴影的水平偏移量；<br>
-• offset-y阴影的垂直偏移量;<br>
-• blur-radius模糊距离；<br>
-• spread-radius阴影尺寸；<br>
-• 颜色。<br>
-其中<strong>blur-raduis</strong>和<strong>spread-raduis</strong>是<strong>可选</strong>的。<br>
-下面是创建了多个阴影的 CSS 例子，阴影加了模糊效果，颜色是透明度很高的黑色:</p>
-<p>box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);</p>
-</li>
-<li>
-<p>CSS 里的<strong>opacity</strong>属性用来设置元素的透明度。<br>
-值 1 代表完全不透明。<br>
-值 0.5 代表半透明。<br>
-值 0 代表完全透明。<br>
-透明度会应用到元素内的所有内容，不论是图片，还是文本，或是背景色。</p>
-</li>
-<li>
-<p>CSS 里面的<strong>text-transform</strong>属性来改变英文中字母的大小写。它通常用来统一页面里英文的显示，且无需直接改变 HTML 元素中的文本。<br>
-下面的表格展示了text-transform的不同值对文字 “Transform me” 的影响。</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Value</th>
-<th style="text-align:left">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">lowercase</td>
-<td style="text-align:left">&quot;transform me&quot;</td>
-</tr>
-<tr>
-<td style="text-align:left">uppercase</td>
-<td style="text-align:left">&quot;TRANSFORM ME&quot;</td>
-</tr>
-<tr>
-<td style="text-align:left">capitalize</td>
-<td style="text-align:left">&quot;Transform Me&quot;</td>
-</tr>
-<tr>
-<td style="text-align:left">initial</td>
-<td style="text-align:left">使用默认值</td>
-</tr>
-<tr>
-<td style="text-align:left">inherit</td>
-<td style="text-align:left">使用父元素的text-transform值。</td>
-</tr>
-<tr>
-<td style="text-align:left">none</td>
-<td style="text-align:left">Default:不改变文字。</td>
-</tr>
-</tbody>
-</table>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[CSS介绍]]></title>
@@ -152,26 +30,6 @@ hr：创建水平线（Horizontal Rule）,是个单标签。<br>
         <link href="https://lemooooooon.github.io/post/css-jie-shao/">
         </link>
         <updated>2020-06-18T02:47:53.000Z</updated>
-        <content type="html"><![CDATA[<p>CSS （ Cascading Style Sheet）层叠样式表，主要用来控制网页的样式。</p>
-<p>CSS 的选择器区分大小写，因此要谨慎使用大写。</p>
-<p>CSS 允许控制以下样式：<br>
-{<br>
-颜色 color<br>
-背景 background<br>
-字体 font<br>
-位置 position<br>
-显示 display<br>
-边框 border<br>
-内边距 padding<br>
-外边距 margin<br>
-行高 line-height<br>
-装饰 text-decoration<br>
-过渡 transtion<br>
-变化 transform<br>
-动画 animation<br>
-}</p>
-<p>CSS 背后的思想是，通过选择器来定位 DOM（文档对象模型）的元素，然后将各种样式规则应用在元素上，从而改变元素在页面上的显示方式</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[第一篇blog]]></title>
@@ -179,7 +37,5 @@ hr：创建水平线（Horizontal Rule）,是个单标签。<br>
         <link href="https://lemooooooon.github.io/post/di-yi-pian-blog/">
         </link>
         <updated>2020-06-15T08:09:20.000Z</updated>
-        <content type="html"><![CDATA[<p>这是一个新的开始</p>
-]]></content>
     </entry>
 </feed>
