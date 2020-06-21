@@ -759,6 +759,10 @@ a {
   margin: 4px 8px;
 }
 
+      .post-item .right .feature-container {
+        border-radius: 5px;
+      }
+    
       body {
         background: #e9ecef;
       }
