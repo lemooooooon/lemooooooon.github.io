@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>CSS介绍 | Lemooooooon</title>
+<title>网页访问友好 | Lemooooooon</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,14 +18,9 @@
 
 
 
-    <meta name="description" content="CSS （ Cascading Style Sheet）层叠样式表，主要用来控制网页的样式。
-CSS 的选择器区分大小写，因此要谨慎使用大写。
-CSS 允许控制以下样式：
-{
-颜色 color
-背景 background
-字体 font
-位..." />
+    <meta name="description" content="“访问友好性”通常意味着 Web 内容和用户界面可以被广泛的受众理解、导航和交互。这包括有视觉、听觉、行动能力或认知障碍的人。以下三个一般概念有助于提高访问友好性:
+• 有组织良好的代码，使用适当的标记
+• 确保非文本和可视内容存在文本替代..." />
     <meta name="keywords" content="前端" />
   </head>
   <body>
@@ -101,29 +96,34 @@ CSS 允许控制以下样式：
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">CSS介绍</h2>
-            <div class="post-date">2020-06-18</div>
+            <h2 class="post-title">网页访问友好</h2>
+            <div class="post-date">2020-06-19</div>
             
             <div class="post-content" v-pre>
-              <p>CSS （ Cascading Style Sheet）层叠样式表，主要用来控制网页的样式。</p>
-<p>CSS 的选择器区分大小写，因此要谨慎使用大写。</p>
-<p>CSS 允许控制以下样式：<br>
-{<br>
-颜色 color<br>
-背景 background<br>
-字体 font<br>
-位置 position<br>
-显示 display<br>
-边框 border<br>
-内边距 padding<br>
-外边距 margin<br>
-行高 line-height<br>
-装饰 text-decoration<br>
-过渡 transtion<br>
-变化 transform<br>
-动画 animation<br>
-}</p>
-<p>CSS 背后的思想是，通过选择器来定位 DOM（文档对象模型）的元素，然后将各种样式规则应用在元素上，从而改变元素在页面上的显示方式</p>
+              <p>“访问友好性”通常意味着 Web 内容和用户界面可以被广泛的受众理解、导航和交互。这包括有视觉、听觉、行动能力或认知障碍的人。以下三个一般概念有助于提高访问友好性:<br>
+• 有组织良好的代码，使用<strong>适当的标记</strong><br>
+• 确保非文本和可视内容存在<strong>文本替代</strong><br>
+• 创建一个易于导航的页面，它对<strong>键盘友好</strong></p>
+<!-- more -->
+<ol>
+<li>
+<p>alt属性中的文本作为备用文字描述了图片的内容，有助于搜索引擎理解图片内容。<br>
+例如：</p>
+<p>&amp;#60img src=&quot;importantLogo.jpeg&quot; alt=&quot;Company logo&quot;&amp;#62</p>
+</li>
+</ol>
+<p>屏幕阅读器通过识别alt属性，并朗读其中的内容，来告知用户图片包含的关键信息。<br>
+良好的alt文本可以简明扼要地描述图片信息，所以你应该为图片添加alt属性。<br>
+在图片已经有了文字说明，alt属性似乎有些多余。即便如此，我们仍然需要为img标签添加alt属性，这时可以把它设为空。</p>
+<ol start="2">
+<li>
+<p>使用标题显示内容的层次关系<br>
+在使用中，相同级别（或者更高级别）的标题标签用于开启新的章节，低一级别的标题标签用于开启上一级标题标签的子小节。<br>
+举个例子：一个h2标签后紧跟若干h4标签的页面，会让使用屏幕阅读器的用户感到困惑。尽管在页面中，使用这 6 个标题标签可以控制内容的的视觉样式，但我们应该使用 CSS 来调整。<br>
+最后一点，每个页面应该只有一个h1标签，用来说明页面主要内容。h1标签和其他的标题标签可以让搜索引擎获取页面的大纲。</p>
+</li>
+<li></li>
+</ol>
 
             </div>
             
@@ -138,9 +138,9 @@ CSS 允许控制以下样式：
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://lemooooooon.github.io/post/di-yi-pian-blog/">
+                <a href="https://lemooooooon.github.io/post/xiang-ying-shi-wang-ye-she-ji-responsive-web-design/">
                   <h3 class="post-title">
-                    第一篇blog
+                    响应式网页设计（Responsive Web Design）
                   </h3>
                 </a>
               </div>
