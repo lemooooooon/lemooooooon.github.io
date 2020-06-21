@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lemooooooon.github.io</id>
     <title>Lemooooooon</title>
-    <updated>2020-06-21T03:58:58.559Z</updated>
+    <updated>2020-06-21T07:50:38.337Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lemooooooon.github.io"/>
     <link rel="self" href="https://lemooooooon.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://lemooooooon.github.io/images/avatar.png</logo>
     <icon>https://lemooooooon.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Lemooooooon</rights>
+    <entry>
+        <title type="html"><![CDATA[睡了一个很长很朦胧的午觉]]></title>
+        <id>https://lemooooooon.github.io/post/shui-liao-yi-ge-hen-chang-hen-meng-long-de-wu-jue/</id>
+        <link href="https://lemooooooon.github.io/post/shui-liao-yi-ge-hen-chang-hen-meng-long-de-wu-jue/">
+        </link>
+        <updated>2020-06-21T07:21:00.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[网页访问友好]]></title>
         <id>https://lemooooooon.github.io/post/wang-ye-fang-wen-you-hao/</id>
