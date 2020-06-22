@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>弹性盒子 | Lemooooooon</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://lemooooooon.github.io/favicon.ico?v=1592818693145">
+<link rel="stylesheet" href="https://lemooooooon.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="CSS3 的flexbox（弹性盒子）特别适合用来创建弹性的页面布局。
+
+
+
+使用 flex-direction 属性创建一行
+
+
+元素添加了display: flex成为 flex 容器。
+使用flex-direction属性告诉 CSS..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://lemooooooon.github.io">
+        <img src="https://lemooooooon.github.io/images/avatar.png?v=1592818693145" class="site-logo">
+        <h1 class="site-title">Lemooooooon</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/lemooooooon" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Drying my clothes here.
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://lemooooooon.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">弹性盒子</h2>
+            <div class="post-date">2020-06-22</div>
+            
+            <div class="post-content" v-pre>
+              <p>CSS3 的flexbox（弹性盒子）特别适合用来创建弹性的页面布局。</p>
+<!-- more -->
+<ol>
+<li>
+<h2 id="使用-flex-direction-属性创建一行"><strong>使用 flex-direction 属性创建一行</strong></h2>
+</li>
+</ol>
+<p>元素添加了<strong>display: flex</strong>成为 flex 容器。<br>
+使用flex-direction属性告诉 CSS 需要将这个元素的子元素水平排列。把<strong>flex-direction</strong>属性添加到<strong>父元素</strong>，实现子元素布局，flex-direction的默认值为 row。</p>
+<table>
+<thead>
+<tr>
+<th>flex-direction值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>row</td>
+<td>子元素水平排列</td>
+</tr>
+<tr>
+<td>column</td>
+<td>子元素垂直排列</td>
+</tr>
+<tr>
+<td>row-reverse</td>
+<td>行反转</td>
+</tr>
+<tr>
+<td>column-reverse</td>
+<td>列反转</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>
+<h2 id="使用-justify-content-属性对齐元素"><strong>使用 justify-content 属性对齐元素</strong></h2>
+</li>
+</ol>
+<p>子元素排列的方向被称为 main axis（主轴） 。对于行，主轴水平贯穿每一个项目；对于列，主轴垂直贯穿每一个项目。<br>
+Flex 容器中，与主轴垂直的叫做 cross axis（交叉轴） 。行的交叉轴是垂直的，列的交叉轴是水平的。</p>
+<p>flex 容器里的 flex 子元素有时<strong>不能充满</strong>整个容器，所以我们需要告诉 CSS 如何以特定方案排列和调整 flex 子元素。幸运的是，我们有justify-content属性处理这个问题。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">justify-content值</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">center</td>
+<td style="text-align:left">子元素排列在 flex 容器中间</td>
+</tr>
+<tr>
+<td style="text-align:left">flex-start</td>
+<td style="text-align:left">从左上角开始排列</td>
+</tr>
+<tr>
+<td style="text-align:left">flex-end</td>
+<td style="text-align:left">从右下角开始排列</td>
+</tr>
+<tr>
+<td style="text-align:left">space-between</td>
+<td style="text-align:left">第一个和最后一个项目会被挤到容器边沿。例如，在行中第一个项目会紧贴着容器左侧，最后一个项目会紧贴着容器右侧，然后其他项目均匀排布</td>
+</tr>
+<tr>
+<td style="text-align:left">space-around</td>
+<td style="text-align:left">与space-between相似，头尾不会紧贴容器边缘，空间均匀分布在所有项目两边</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>
+<h2 id="css-提供了align-items属性可以用于在交叉轴调整-flex-子元素">**CSS 提供了align-items属性，可以用于在交叉轴调整 flex 子元素。 **</h2>
+</li>
+</ol>
+<p>对于行，它规定了项目在容器中应该靠上还是靠下，而对于列，就是靠左或靠右。Align-items默认值是stretch.</p>
+<p>align-items的可选值包括：</p>
+<pre><code>• flex-start：从 flex 容器的前端开始排列项目。对行来说是把项目都靠顶部放，对于列是把项目都靠左放。
+• flex-end：从 flex 容器的后端开始排列项目。对行来说是把项目都靠底部放，对于列是把项目都靠右放。
+• center：把项目的位置调整到中间。对于行，垂直居中（项目上下方空间相等）。对于列，水平居中（项目左右方空间相等）。
+• stretch：拉伸项目，填满 flex 容器。例如，排成行的项目从容器顶部拉伸到底部
+• baseline：基线对齐地排列。基线是字体相关的概念，可以认为字体坐落在基线上。
+</code></pre>
+<ol start="4">
+<li>
+<h2 id="使用-flex-wrap-属性包裹一行或一列"><strong>使用 flex-wrap 属性包裹一行或一列</strong></h2>
+</li>
+</ol>
+<p>CSS flexbox 有一个把 flex 子元素拆分为多行（或多列）的特性。默认情况下，flex 容器会调整项目大小，把它们都塞到一起。如果是行的话，所有项目都会在一条直线上。<br>
+不过，使用flex-wrap属性可以使项目换行。这意味着多出来的项目会被移到新的行或列。换行发生的断点由项目和容器的大小决定。<br>
+换行方向的可选值有这些：</p>
+<pre><code>• nowrap：默认值，不换行。
+• wrap：行从上到下排，列从左到右排。
+• wrap-reverse：行从下到上排，列从右到左排。
+</code></pre>
+<ol start="5">
+<li>
+<h2 id="使用-flex-shrink-属性收缩项目"><strong>使用 flex-shrink 属性收缩项目</strong></h2>
+</li>
+</ol>
+<p>以上属性都应用于 flex 容器（flex 子元素的父元素）。除此之外，flex <strong>子元素</strong>也有很多实用属性。<br>
+<strong>flex-shrink属性</strong>。使用之后，如果 flex 容器太小，该项目会自动缩小。当容器的宽度小于里面所有项目的宽度，项目就会自动压缩。<br>
+flex-shrink属性接受 number 类型的值。数值越大，与其他项目相比会被压缩得更厉害。例如，如果一个项目的flex-shrink为 1 ，另一个项目flex-shrink为 3，那么 3 的那个与另一个相比会受到 3 倍压缩。<br>
+与flex-shrink相对的是<strong>flex-grow</strong>，用法一样。</p>
+<p><strong>flex-basis属性</strong>指定了项目在 CSS 进行flex-shrink或flex-grow调整前的初始大小。<br>
+flex-basis属性的单位与其他 size 属性一致（px、em、%等）。如果值为auto，项目的大小依赖于自身内容。</p>
+<p><strong>flex 短方法</strong>属性<br>
+上面几个 flex 属性有一个简写方式。flex-grow、flex-shrink和flex-basis属性可以在flex中一同设置。<br>
+例如，flex: 1 0 10px;会把项目属性设为flex-grow: 1;、flex-shrink: 0;以及flex-basis: 10px;。<br>
+属性的默认设置是flex: 0 1 auto;。<br>
+上面设置的属性，在容器大于 300px 时，会让#box-1填充倍率为#box-2的两倍；在容器小于 300px 时，缩小倍率为#box-2的两倍。300px 是两个盒子的flex-basis的值之和。</p>
+<ol start="6">
+<li>
+<h2 id="使用-align-self-属性"><strong>使用 align-self 属性</strong></h2>
+</li>
+</ol>
+<p>flex 子元素的最后一个属性是<strong>align-self</strong>。这个属性允许你调整<strong>每个项目自己的对齐方式</strong>，而不是一次性设置全部项目。因为float、clear和vertical-align等调整使用的属性都不能应用在 flex 子元素，所以这个属性显得十分有用。<br>
+align-self的允许值与align-items一样，并且它会覆盖align-items的值。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://lemooooooon.github.io/post/shui-liao-yi-ge-hen-chang-hen-meng-long-de-wu-jue/">
+                  <h3 class="post-title">
+                    睡了一个很长很朦胧的午觉
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
