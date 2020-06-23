@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>CSS盒模型 | Lemooooooon</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://lemooooooon.github.io/favicon.ico?v=1592918519715">
+<link rel="stylesheet" href="https://lemooooooon.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="  生活不过是不断从一个小盒子走进了大盒子中。
+
+    在 CSS 里一切 HTML 元素皆为盒子，也就是通常所说的盒模型。块级元素自动从新的一行开始（比如标题、段落以及 div），行内元素排列在上一个元素后（比如图片以及 span）。元..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://lemooooooon.github.io">
+        <img src="https://lemooooooon.github.io/images/avatar.png?v=1592918519715" class="site-logo">
+        <h1 class="site-title">Lemooooooon</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/lemooooooon" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Drying my clothes here.
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://lemooooooon.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">CSS盒模型</h2>
+            <div class="post-date">2020-06-23</div>
+            
+            <div class="post-content" v-pre>
+              <p>  生活不过是不断从一个小盒子走进了大盒子中。</p>
+<!-- more -->
+<p>    在 CSS 里一切 HTML 元素皆为盒子，也就是通常所说的盒模型。块级元素自动从新的一行开始（比如标题、段落以及 div），行内元素排列在上一个元素后（比如图片以及 span）。元素默认按照这种方式布局称为<strong>文档的普通流</strong>，同时 CSS 提供了** position 属性来覆盖它**。</p>
+<p>  当元素的 position 设置为<b>relative</b>时，它允许你通过 CSS 指定该元素在当前普通流页面下的相对偏移量。 CSS 里控制各个方向偏移量的对应的属性是left、right、top和bottom。它们代表着从原来的位置向对应的方向偏移指定的像素、百分比或者 ems。把元素的 position 设置成 relative 并不会改变该元素在普通流布局所占的位置，也不会对其它元素的位置产生影响。</p>
+<p>  下面的例子展示了段落向上偏移 10 像素：</p>
+<pre><code>p {
+  position: relative;
+  bottom: 10px;
+}
+</code></pre>
+<p>  <b>fixed</b>定位是一种特殊的绝对（absolute）定位，区别是其包含块是浏览器窗口。和绝对定位类似，fixed定位使用 top、bottom、left 和 right 属性来调整元素的位置，并且会将元素从当前的文档流里面移除，其它元素会忽略它的存在。<br>
+fixed定位和absolute定位的最明显的区别是fixed定位元素<strong>不会随着屏幕滚动而移动</strong>。</p>
+<p>  <b>float</b>浮动元素不在文档流中，float向左或向右浮动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。通常需要用width属性来指定浮动元素占据的水平空间。</p>
+<p>  当一些元素重叠时，在 HTML 里后出现的元素会默认显示在更早出现的元素的上面。你可以使用<b>z-index</b>属性指定元素的堆叠次序。z-index的取值是整数，数值大的元素优先于数值小的元素显示。</p>
+<p>  在应用设计中经常需要<strong>把一个块级元素水平居中显示</strong>。一种常见的实现方式是把块级元素的margin值设置为auto。<br>
+  同样的，这个方法也对图片奏效。图片默认是内联元素，但是可以通过设置其display属性为block来把它变成块级元素。</p>
+<p>  <font color=#acc>Px表示“绝对尺寸”（并非真正的绝对），实际上就是css中定义的像素（此像素与设备的物理像素有一定的区别，后续详细说明见文末说明1），利用px设置字体大小及元素宽高等比较稳定和精确。Px的缺点是其不能适应浏览器缩放时产生的变化，因此一般不用于响应式网站。px为css中定义的像素（以下简称css像素），与实际的物理像素是有区别的，早期电脑屏幕的物理像素与css像素相同，但是随着科技的发展，高精度屏幕开始出现在人们的视野中。以iPhone的Retina屏为例，其物理像素与css像素关系见下图。</font></p>
+<figure data-type="image" tabindex="1"><img src="https://lemooooooon.github.io/post-images/1592915914515.png" alt="" loading="lazy"></figure>
+<p>  <font color=#acc>em表示相对尺寸，其相对于当前对象内文本的font-size（如果当前对象内文本的font-size计量单位也是em，则当前对象内文本的font-size的参考对象为父元素文本font-size）。使用em可以较好的相应设备屏幕尺寸的变化，但是在进行元素设置时都需要知道父元素文本的font-size及当前对象内文本的font-size，如有遗漏可能会导致错误。</p>
+<p>  rem也表示相对尺寸，其参考对象为根元素<html>的font-size，因此只需要确定这一个font-size。</font></p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://lemooooooon.github.io/post/wang-ye-se-cai-da-pei-si-xiang/">
+                  <h3 class="post-title">
+                    CSS色彩搭配
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
