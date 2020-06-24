@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>CSS图形设计 | Lemooooooon</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://lemooooooon.github.io/favicon.ico?v=1593006225758">
+<link rel="stylesheet" href="https://lemooooooon.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="使用 CSS Transform scale 属性可以更改元素的大小
+CSS 属性transform里面的scale()函数，可以用来改变元素的显示比例。下面的例子把页面的段落元素放大了 2 倍：
+p {
+  transform:scale..." />
+    <meta name="keywords" content="CSS,前端" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://lemooooooon.github.io">
+        <img src="https://lemooooooon.github.io/images/avatar.png?v=1593006225758" class="site-logo">
+        <h1 class="site-title">Lemooooooon</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/lemooooooon" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Drying my clothes here.
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://lemooooooon.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">CSS图形设计</h2>
+            <div class="post-date">2020-06-23</div>
+            
+              <div class="feature-container" style="background-image: url('https://lemooooooon.github.io/post-images/css-tu-xing-she-ji.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>使用 CSS Transform scale 属性可以更改元素的大小<br>
+CSS 属性transform里面的scale()函数，可以用来改变元素的显示比例。下面的例子把页面的段落元素放大了 2 倍：<br>
+p {<br>
+  transform:scale(2);<br>
+}</p>
+<p>使用CSS Transform scale 属性在悬停时缩放元素<br>
+transform属性有很多函数，可以对元素进行调整大小、移动、旋转、翻转等操作。当使用伪类描述元素的指定状态如:hover时，transform属性可以方便的给元素添加交互。<br>
+下面是当用户悬停段落元素时，段落大小缩放到原始大小 2.1 倍的例子：<br>
+p:hover {<br>
+  transform: scale(2.1);</p>
+<p>使用 CSS Transform skex 属性沿X轴倾斜元素<br>
+接下来要介绍的transform属性是skewX，skewX使选择的元素沿着 X 轴（横向）翻转指定的角度。<br>
+下面的代码沿着 X 轴翻转段落元素 -32 度。<br>
+p {<br>
+  transform: skewX(-32deg);<br>
+}</p>
+<p>skewY属性使指定元素沿 Y 轴（垂直方向）翻转指定角度。</p>
+<p>使用 CSS 创建一个图形<br>
+术语表：blur-radius =&gt; 模糊半径，spread-radius =&gt; 辐射半径，transparent =&gt; 透明的，border-radius =&gt; 圆角边框。<br>
+通过使用选择器选择不同的元素并改变其属性，你可以创造一些有趣的形状。比如新月。你可以使用box-shadow属性来设置元素的阴影，border-radius属性控制元素的圆角边框。<br>
+首先你将会创建一个圆的、透明的对象，它具有模糊阴影并略微向两边递减。如你所见，这个阴影其实就是新月形狀。<br>
+为了创建一个圆形的对象，border-radius应该被设置成 50%。<br>
+你应该还记得之前关卡的box-shadow属性以及它的依次取值offset-x、offset-y、blur-radius、spread-radius和颜色值。其中blur-radius和spread-radius是可选的。</p>
+<p>使用 CSS 和 HTML 创建更复杂的形状<br>
+世界上最流行的形状非心形莫属了，在本关里你将用纯 CSS 创建一个心形。但是首先你需要了解:before和:after伪类。这些伪类用来在选择元素之前和之后添加一些内容。在下面的例子里，:before伪类元素用来给 class 为heart的元素添加一个正方形。<br>
+.heart:before {<br>
+  content: &quot;&quot;;<br>
+  background-color: yellow;<br>
+  border-radius: 25%;<br>
+  position: absolute;<br>
+  height: 50px;<br>
+  width: 70px;<br>
+  top: -50px;<br>
+  left: 5px;<br>
+}<br>
+:before和:after必须配合content来使用。这个属性通常用来给元素添加内容诸如图片或者文字。当:before和:after伪类用来添加某些形状而不是图片或文字时，content属性仍然是必需的，但是它的值可以是空字符串。<br>
+在上面的例子里，class 为heart元素的:before伪类添加了一个黄色的长方形，长方形的height和width分别为 50px 和 70px。由于设置了其边框半径为 25%，所以长方形为圆角长方形，同时其相对位置为距离left5px，以及向top偏移 50px。</p>
+<pre><code>&lt;style&gt;
+.heart {
+position: absolute;
+margin: auto;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background-color: pink;
+height: 50px;
+width: 50px;
+transform: rotate(-45deg);
+}
+.heart:after {
+background-color: pink;
+content: &quot;&quot;;
+border-radius: 50%;
+position: absolute;
+width: 50px;
+height: 50px;
+top: 0px;
+left: 25px;
+}
+.heart:before {
+content:&quot;&quot; ;
+background-color: pink;
+border-radius: 50%;
+position: absolute;
+width: 50px;
+height: 50px;
+top: -25px;
+left: 0px;
+}
+&lt;/style&gt;
+&lt;div class = &quot;heart&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>了解 CSS 的关键帧和动画是如何工作的<br>
+如果要给元素添加动画，你需要了解animation属性以及@keyframes规则。animation属性控制动画的外观，@keyframes规则控制动画中各阶段的变化。总共有 8 个animation属性。为了便于理解，本关暂时只涉及到两个最常用的属性。<br>
+animation-name设置动画的名称， 也就是要绑定的选择器的@keyframes的名称。<br>
+animation-duration设置动画所花费的时间。<br>
+@keyframes能够创建动画。 创建动画的原理是将一套 CSS 样式逐渐变化为另一套样式。具体是通过设置动画期间对应的“frames”的 CSS 的属性，以百分比来规定改变的时间，或者通过关键词“from”和“to”，等价于 0% 和 100%。打个比方，CSS 里面的 0% 属性就像是电影里面的开场镜头。CSS 里面的 100% 属性就是元素最后的样子，相当于电影里的演职员表或者鸣谢镜头。CSS 在对应的时间内给元素过渡添加效果。下面举例说明@keyframes和动画属性的用法：</p>
+<pre><code>#anim {
+  animation-name: colorful;
+  animation-duration: 3s;
+}
+@keyframes colorful {
+  0% {
+    background-color: blue;
+  }
+  100% {
+    background-color: yellow;
+  }
+}
+</code></pre>
+<p>id 为anim的元素，代码设置animation-name为colorful，设置animation-duration为 3 秒。然后把@keyframes引用到名为colorful的动画属性上。colorful在动画开始时（0%）设置颜色为蓝色，在动画结束时（100%）设置颜色为黄色。注意不是只有开始和结束的过渡可以设置，0% 到 100% 间的任意百分比你都可以设置。</p>
+<p>使用CSS动画更改按钮的悬停状态<br>
+你可以在按钮悬停时使用@keyframes改变按钮的颜色。<br>
+下面是在图片悬停时改变图片宽度的例子，<strong>注意ms代表毫秒，1000ms 等于 1s。</strong>：</p>
+<pre><code>&lt;style&gt;
+  img:hover {
+    animation-name: width;
+    animation-duration: 500ms;
+  }
+
+  @keyframes width {
+    100% {
+      width: 40px;
+    }
+  }
+&lt;/style&gt;
+
+&lt;img src=&quot;https://bit.ly/smallgooglelogo&quot; alt=&quot;Google's Logo&quot; /&gt;
+</code></pre>
+<p>修改动画的填充模式<br>
+太棒了，但是现在还不完美。注意动画在500ms之后重置了，所以按钮又变成了之前的颜色。而我们想要的效果是按钮在悬停时始终高亮。<br>
+这可以通过把animation-fill-mode设置成forwards来实现。animation-fill-mode指定了在动画结束时元素的样式。你可以向这样设置它：<br>
+animation-fill-mode: forwards;</p>
+<style>
+button {
+border-radius: 5px;
+color: white;
+background-color: #0F5897;
+padding: 5px 10px 8px 10px;
+}
+button:hover {
+animation-name: background-color;
+animation-duration: 500ms;
+/* add your code below this line */
+animation-fill-mode:forwards;
+/* add your code above this line */
+}
+@keyframes background-color {
+100% {
+background-color: #4791d0;
+}
+}
+</style>
+<p><button>注册</button></p>
+<p>使用 CSS 动画创建运动<br>
+当元素的position被指定，如fixed或者relative时，CSS 偏移属性right、left、top和bottom可以用在动画规则里创建动作。<br>
+就像下面的例子展示的那样，你可以在50%keyframe 处设置top属性为 50px， 在开始（0%）和最后（100%）keframe 处设置为 0px，以产生项目向下运动，然后返回的动作效果。</p>
+<pre><code>@keyframes rainbow {
+  0% {
+    background-color: blue;
+    top: 0px;
+  }
+  50% {
+    background-color: green;
+    top: 50px;
+  }
+  100% {
+    background-color: yellow;
+    top: 0px;
+  }
+}
+</code></pre>
+<p>通过从左到右淡化元素来创建视觉方向<br>
+在本关里，你将要改变动画元素的opacity，使其在到达屏幕右侧时渐隐。<br>
+在展示的动画里，具有渐变背景的圆形元素在 50% 标记的@keyframes规则处向右移动。</p>
+<p>使用无限的动画计数制作永不停止的动画<br>
+之前的关卡里介绍了一些动画属性以及@keyframes规则的用法。还有一个常用的动画属性是animation-iteration-count，这个属性允许你控制动画循环的次数。下面是一个例子：<br>
+animation-iteration-count: 3;<br>
+在这里动画会在运行 3 次后停止，如果想让动画一直运行，可以把值设置成 infinite。</p>
+<pre><code>&lt;style&gt;
+#ball {
+width: 100px;
+height: 100px;
+margin: 50px auto;
+position: relative;
+border-radius: 50%;
+background: linear-gradient(
+35deg,
+#ccffff,
+#ffcccc
+);
+animation-name: bounce;
+animation-duration: 1s;
+animation-iteration-count:infinite;
+}
+@keyframes bounce{
+0% {
+top: 0px;
+}
+50% {
+top: 249px;
+width: 130px;
+height: 70px;
+}
+100% {
+top: 0px;
+}
+}
+&lt;/style&gt;
+&lt;div id=&quot;ball&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>一个不断弹跳的球</p>
+<p>使用无限的动画计数制作 CSS 心跳<br>
+这也是一个用animation-iteration-count属性创造持续动画的例子，它基于前面关卡创建的心形。<br>
+心跳动画的每一秒包含两个部分。heart元素（包括:before和:after）使用transform属性改变其大小，背景div使用background属性改变其颜色。</p>
+<pre><code>&lt;style&gt;
+.back {
+position: fixed;
+padding: 0;
+margin: 0;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: white;
+animation-name: backdiv;
+animation-duration: 1s; 
+animation-iteration-count:infinite;
+}
+.heart {
+position: absolute;
+margin: auto;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background-color: pink;
+height: 50px;
+width: 50px;
+transform: rotate(-45deg);
+animation-name: beat;
+animation-duration: 1s;
+animation-iteration-count:infinite;
+}
+.heart:after {
+background-color: pink;
+content: &quot;&quot;;
+border-radius: 50%;
+position: absolute;
+width: 50px;
+height: 50px;
+top: 0px;
+left: 25px;
+}
+.heart:before {
+background-color: pink;
+content: &quot;&quot;;
+border-radius: 50%;
+position: absolute;
+width: 50px;
+height: 50px;
+top: -25px;
+left: 0px;
+}
+@keyframes backdiv {
+50% {
+background: #ffe6f2;
+}
+}
+@keyframes beat {
+0% {
+transform: scale(1) rotate(-45deg);
+}
+50% {
+transform: scale(0.6) rotate(-45deg);
+}
+}
+&lt;/style&gt;
+&lt;div class=&quot;back&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;heart&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>不断跳动的心</p>
+<p>以可变速率来给元素添加动画<br>
+改变相似元素的动画频率的方法有很多。目前接触到的就有animation-iteration-count和@keyframes。<br>
+举例说明，右边的动画包含了两个小星星，每个小星星都在 20%@keyframes处变小并且 opacity 变为 20%，也就是一闪一闪的动画效果。你可以通过改变其中一个星星的@keyframes规则以使两个小星星以不同的频率闪烁。</p>
+<p>使用关键字更改动画定时器<br>
+在 CSS 动画里，animation-timing-function规定动画的速度曲线。速度曲线定义动画从一套 CSS 样式变为另一套所用的时间。如果要描述的动画是一辆车在指定时间内（animation-duration）从 A 运动到 B，那么animation-timing-function表述的就是车在运动中的加速和减速等过程。<br>
+已经有了很多预定义的值可以直接使用于大部分场景。比如，默认的值是ease，动画以低速开始，然后加快，在结束前变慢。其它常用的值包括ease-out，动画以高速开始，以低速结束;ease-in，动画以低速开始，以高速结束；linear，动画从头到尾的速度是相同的。</p>
+<p>学习贝塞尔曲线的原理<br>
+上一关卡介绍了animation-timing-function以及它的一些预定义的值。这些值定义了不同时间内的动画速度。除了预定义值之外，CSS 还提供了贝塞尔曲线（Bezier curves）来更出色的控制动画的速度曲线。<br>
+在 CSS 动画里，用cubic-bezier来定义贝塞尔曲线。曲线的形状代表了动画的速度。曲线在 1*1 的坐标系统内，曲线的 X 轴代表动画的时间间隔（类似于时间比例尺），Y 轴代表动画的改变。<br>
+cubic-bezier函数包含了 1 * 1 网格里的4个点：p0、p1、p2和p3。其中p0和p3是固定值，代表曲线的起始点和结束点，坐标值依次为 (0, 0) 和 (1, 1)。你只需设置另外两点的 x 值和 y 值，设置的这两点确定了曲线的形状从而确定了动画的速度曲线。在 CSS 里面通过(x1, y1, x2, y2)来确定p1和p2。综上，下面就是 CSS 贝塞尔曲线的例子：<br>
+animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);<br>
+在上面的例子里，两个点的 x 和 y 值相等（x1 = 0.25 = y1 和 x2 = 0.75 = y2），如果你还记得初中几何，结果是从原点到点 (1, 1) 的一条直线。动画速度呈线性，效果和linear一致。换言之，元素匀速运动。</p>
+<p>使用贝塞尔曲线移动图形<br>
+前面的关卡涉及的ease-out预定义值描述了动画以高速开始低速结束。右边的动画展示了ease-out预定义值（蓝色的元素）和linear预定义值（红色的元素）的区别。同样的，ease-out预定义值也可以用贝塞尔曲线函数实现。<br>
+通俗的讲，将一条直线放在范围只有 1 的坐标轴中，并从中间拿p1和p2两个点来拉扯（X 轴的取值区间是 [0, 1]，Y 轴任意），最后形成的曲线就是动画的贝塞尔速度曲线。下面是贝塞尔曲线模仿 ease-out 预定义值的例子：<br>
+animation-timing-function: cubic-bezier(0, 0, 0.58, 1);<br>
+记住所有的cubic-bezier函数都是从坐标为 (0, 0) 的p0开始，在坐标为 (1, 1) 的p3结束。在这个例子里，曲线在 y 轴（从 0 开始，运动到p1的 0，然后运动到p2的 1）上移动的比在 x 轴（从 0 开始，运动到p1的 0，到p2的 0.58）上移动的快。结果是，在这一段动画内元素运动的快。到曲线的结尾，x 和 y 之间的关系反过来了，y 值保持为1，没有变化，x 值从 0.58 变为 1，元素运动的慢。</p>
+<p>使用贝塞尔曲线让运动更加自然<br>
+本关的元素模拟的是杂技抛接球。之前的关卡涉及了linear和ease-out的贝塞尔曲线描述，如你所见，这两个都无法完美的描述杂耍球的运动。在本关里你需要定制贝塞尔曲线。<br>
+当animation-iteration-count值为 infinite 时animation-timing-function会自动循环 keyframe。由于是在动画周期中间（50%处）设置的 keyframe 规则，最终的结果是球向上和球向下是两个同样的动画过程。<br>
+下面的例子模拟了杂耍球运动：<br>
+cubic-bezier(0.3, 0.4, 0.5, 1.6);<br>
+注意 y2 的值是大于 1 的。虽然贝塞尔曲线是在 1*1 的坐标系统内 x 值只能在 0 到 1，但是 y 值是可以大于 1 的。这样才能模拟杂耍球运动。</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://lemooooooon.github.io/tag/vInVldQTz/" class="tag">
+                    CSS
+                  </a>
+                
+                  <a href="https://lemooooooon.github.io/tag/nbLAsc-UA/" class="tag">
+                    前端
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://lemooooooon.github.io/post/css-he-mo-xing/">
+                  <h3 class="post-title">
+                    CSS盒模型
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
