@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>面对恐惧 | Lemooooooon</title>
+<title>应用层缓存 | Lemooooooon</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,8 +18,9 @@
 
 
 
-    <meta name="description" content="要想摆脱现状，唯有舍弃已有。
-" />
+    <meta name="description" content="磁盘读写的两种策略 LRU（Least Recently Used 最近最久使用）和 LFU（Least Frequently Used 最近最少使用）。
+缓存方法：
+Set(key string, value interface) // ..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -95,20 +96,59 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">面对恐惧</h2>
-            <div class="post-date">2020-06-23</div>
+            <h2 class="post-title">应用层缓存</h2>
+            <div class="post-date">2020-07-13</div>
             
             <div class="post-content" v-pre>
-              <p>要想摆脱现状，唯有舍弃已有。</p>
+              <p>磁盘读写的两种策略 LRU（Least Recently Used 最近最久使用）和 LFU（Least Frequently Used 最近最少使用）。</p>
+<p>缓存方法：</p>
+<pre><code>Set(key string, value interface) // 写数据
+Get(key string) interface{}      // 读数据
+</code></pre>
+<p>缓存经常进行写删操作，考虑数据结构使用O（1）的双向链表；对于查找，可以维护一个哈希表，让查找也为O(1)。<br>
+LRU从头部插入，从尾部淘汰数据。</p>
+<p>LRU操作细节：</p>
+<pre><code>Set(k, v)
+</code></pre>
+<p>数据已缓存，则更新值，挪到 head 前<br>
+数据未缓存<br>
+缓存空间未满：直接挪到 head 前<br>
+缓存空间已满：移除 tail 并将新数据挪到 head 前</p>
+<pre><code>Get(k)
+</code></pre>
+<p>命中：节点挪到 head 前，并返回 value<br>
+未命中：返回 -1</p>
+<p><img src="https://lemooooooon.github.io/post-images/1594606544897.jpg" alt="" loading="lazy"><br>
+（图片来源于github）<br>
+<img src="https://lemooooooon.github.io/post-images/1594606671309.png" alt="" loading="lazy"><br>
+（图片来源于知乎）<br>
+<img src="https://lemooooooon.github.io/post-images/1594606678714.png" alt="" loading="lazy"><br>
+（图片来源于知乎）</p>
+<p>LFU<br>
+依旧使用双向链表实现高效写删操作，但 LFU 淘汰原则是使用次数。可按使用次数划分频率梯队，数据节点使用一次就挪到高频梯队。</p>
+<figure data-type="image" tabindex="1"><img src="https://lemooooooon.github.io/post-images/1594629336513.png" alt="" loading="lazy"></figure>
+<p>LFU 操作细节：</p>
+<pre><code>Set(k, v)
+</code></pre>
+<p>数据已缓存，则更新值，挪到下一梯队<br>
+数据未缓存<br>
+缓存空间未满：直接挪到第 1 梯队<br>
+缓存空间已满：移除 minFreq 梯队的 tail 节点，并将新数据挪到第 1 梯队</p>
+<pre><code>Get(k)
+</code></pre>
+<p>命中：节点挪到下一梯队，并返回 value<br>
+未命中：返回 -1</p>
+<p>常见的缓存淘汰策略有队列直接实现的 FIFO，双链表实现的 LFU 与 LRU，此外还有扩展的 2LRU 与 ARC 等算法，它们的实现不依赖于任意一种数据结构，此外对于旧数据的衡量原则不同，淘汰策略也不一样。</p>
+<p>在算法直接实现难度较大的情况下，不妨采用空间换时间，或时间换空间的策略来间接实现。要充分利用各种数据结构的优点并互补，比如链表加哈希表就实现了任意操作 O(1) 复杂度的复合数据结构。</p>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://lemooooooon.github.io/post/dan-xing-he-zi/">
+                <a href="https://lemooooooon.github.io/post/css-tu-xing-she-ji/">
                   <h3 class="post-title">
-                    弹性盒子
+                    CSS图形设计
                   </h3>
                 </a>
               </div>
