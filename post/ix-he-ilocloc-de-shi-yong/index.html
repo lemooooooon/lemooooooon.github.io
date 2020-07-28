@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://lemooooooon.github.io/favicon.ico?v=1595907041210">
+<link rel="shortcut icon" href="https://lemooooooon.github.io/favicon.ico?v=1595921042507">
 <link rel="stylesheet" href="https://lemooooooon.github.io/styles/main.css">
 
 
@@ -18,12 +18,12 @@
 
 
 
-    <meta name="description" content="iloc函数为Selection by Position，即按位置选择数据，即第n行，第n列数据，只接受整型参数
+    <meta name="description" content="iloc
+
+iloc函数为Selection by Position，即按位置选择数据，即第n行，第n列数据，只接受整型参数
 记住，0:2为左闭右开区间，即取0，1
 
-若要取第一列的所有数据，则为df.iloc[:, 0]，记住不接受’A’作为参数
-
-..." />
+若要取第一列的所有数据，则为df.iloc[:, 0]，记住不接受’A’..." />
     <meta name="keywords" content="python,pandas" />
   </head>
   <body>
@@ -33,7 +33,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://lemooooooon.github.io">
-        <img src="https://lemooooooon.github.io/images/avatar.png?v=1595907041210" class="site-logo">
+        <img src="https://lemooooooon.github.io/images/avatar.png?v=1595921042507" class="site-logo">
         <h1 class="site-title">Lemooooooon</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -103,11 +103,26 @@
             <div class="post-date">2020-07-28</div>
             
             <div class="post-content" v-pre>
-              <p>iloc函数为Selection by Position，即按位置选择数据，即第n行，第n列数据，<strong>只接受整型</strong>参数<br>
+              <pre><code>iloc
+</code></pre>
+<p>iloc函数为Selection by Position，即按位置选择数据，即第n行，第n列数据，<strong>只接受整型</strong>参数<br>
 记住，0:2为左闭右开区间，即取0，1</p>
 <figure data-type="image" tabindex="1"><img src="https://lemooooooon.github.io/post-images/1595906943038.png" alt="" loading="lazy"></figure>
 <p>若要取第一列的所有数据，则为df.iloc[:, 0]，记住不接受’A’作为参数</p>
 <figure data-type="image" tabindex="2"><img src="https://lemooooooon.github.io/post-images/1595907035555.png" alt="" loading="lazy"></figure>
+<pre><code>loc
+</code></pre>
+<p>首先创建一个dataframe：</p>
+<figure data-type="image" tabindex="3"><img src="https://lemooooooon.github.io/post-images/1595911541533.png" alt="" loading="lazy"></figure>
+<p>loc为Selection by Label函数，即为按标签取数据，标签是什么，就是上面的’0’~‘4’, ‘A’~‘B’。<br>
+例如第一个参数选择index，第二个参数选择column，如下图：</p>
+<figure data-type="image" tabindex="4"><img src="https://lemooooooon.github.io/post-images/1595911602546.png" alt="" loading="lazy"></figure>
+<p>建议写df.loc[0, :]，这样可以清楚的看出为第0行的所有记录，同样如果取第’A’列的所有记录，可以写df.loc[:, ‘A’]，如下图：</p>
+<figure data-type="image" tabindex="5"><img src="https://lemooooooon.github.io/post-images/1595911817464.png" alt="" loading="lazy"></figure>
+<p>:表示所有，[]里边为先行后列。</p>
+<pre><code>ix
+</code></pre>
+<p>警告:在0.20.0开始，.ix索引器已被弃用，赞成更加严格.iloc 和.loc索引。.ix可以根据索引的数据类型决定按位置或通过标签进行索引,这引起了相当多的用户混淆。</p>
 
             </div>
             
