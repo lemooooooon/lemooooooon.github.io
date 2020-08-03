@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>ix和iloc、loc的使用 | Lemooooooon</title>
+<title>ES6新特性 · let和const | Lemooooooon</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,13 +18,15 @@
 
 
 
-    <meta name="description" content="iloc
-
-iloc函数为Selection by Position，即按位置选择数据，即第n行，第n列数据，只接受整型参数
-记住，0:2为左闭右开区间，即取0，1
-
-若要取第一列的所有数据，则为df.iloc[:, 0]，记住不接受’A’..." />
-    <meta name="keywords" content="python,pandas" />
+    <meta name="description" content="与var不同，let和const的作用域都是块级。
+let
+var a = [];
+for (var i = 0; i &lt; 10; i++) {
+a[i] = function () {
+    console.log(i);
+};
+..." />
+    <meta name="keywords" content="ES6,JavaScript,前端" />
   </head>
   <body>
     <div id="app" class="main">
@@ -99,41 +101,52 @@ iloc函数为Selection by Position，即按位置选择数据，即第n行，第
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">ix和iloc、loc的使用</h2>
-            <div class="post-date">2020-07-28</div>
+            <h2 class="post-title">ES6新特性 · let和const</h2>
+            <div class="post-date">2020-08-03</div>
             
             <div class="post-content" v-pre>
-              <pre><code>iloc
+              <p>与var不同，let和const的作用域都是块级。</p>
+<h1 id="let">let</h1>
+<pre><code>var a = [];
+for (var i = 0; i &lt; 10; i++) {
+a[i] = function () {
+    console.log(i);
+};
+}
+a[6](); // 输出10
 </code></pre>
-<p>iloc函数为Selection by Position，即按位置选择数据，即第n行，第n列数据，<strong>只接受整型</strong>参数<br>
-记住，0:2为左闭右开区间，即取0，1</p>
-<figure data-type="image" tabindex="1"><img src="https://lemooooooon.github.io/post-images/1595906943038.png" alt="" loading="lazy"></figure>
-<p>若要取第一列的所有数据，则为df.iloc[:, 0]，记住不接受’A’作为参数</p>
-<figure data-type="image" tabindex="2"><img src="https://lemooooooon.github.io/post-images/1595907035555.png" alt="" loading="lazy"></figure>
-<pre><code>loc
+<p>上面代码中，变量i是var命令声明的，在全局范围内都有效，所以<strong>全局只有一个变量i</strong>。每一次循环，变量i的值都会发生改变，而循环内被赋给数组a的函数内部的console.log(i)，里面的i指向的就是全局的i。也就是说，<strong>所有数组a的成员里面的i，指向的都是同一个i，导致运行时输出的是最后一轮的i的值</strong>，也就是 10。</p>
+<pre><code>var a = [];
+for (let i = 0; i &lt; 10; i++) {
+    a[i] = function () {
+    console.log(i);
+    };
+}
+a[6](); //输出 6
 </code></pre>
-<p>首先创建一个dataframe：</p>
-<figure data-type="image" tabindex="3"><img src="https://lemooooooon.github.io/post-images/1595911541533.png" alt="" loading="lazy"></figure>
-<p>loc为Selection by Label函数，即为按标签取数据，标签是什么，就是上面的’0’~‘4’, ‘A’~‘B’。<br>
-例如第一个参数选择index，第二个参数选择column，如下图：</p>
-<figure data-type="image" tabindex="4"><img src="https://lemooooooon.github.io/post-images/1595911602546.png" alt="" loading="lazy"></figure>
-<p>建议写df.loc[0, :]，这样可以清楚的看出为第0行的所有记录，同样如果取第’A’列的所有记录，可以写df.loc[:, ‘A’]，如下图：</p>
-<figure data-type="image" tabindex="5"><img src="https://lemooooooon.github.io/post-images/1595911817464.png" alt="" loading="lazy"></figure>
-<p>:表示所有，[]里边为先行后列。</p>
-<pre><code>ix
+<p>上面代码中，变量i是let声明的，<strong>当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量</strong>，所以最后输出的是6。</p>
+<h1 id="const">const</h1>
+<p>const声明的是常量，一旦声明就不可再进行修改。但是当用const声明对象时，又会出现一种新情况，举个栗子：</p>
+<pre><code>const person = {name: &quot;Peter&quot;, age: &quot;22&quot;};
+person.age = 23;                      // 不会报错，person的age变量会被改成23
+person = {name: &quot;Lily&quot;, age: &quot;18&quot;};   // 报错
 </code></pre>
-<p>警告:在0.20.0开始，.ix索引器已被弃用，赞成更加严格.iloc 和.loc索引。.ix可以根据索引的数据类型决定按位置或通过标签进行索引,这引起了相当多的用户混淆。</p>
+<p>如果用const声明一个对象，对象所包含的值是可以被修改的。换一句话来说，只要对象指向的地址不被修改，就是允许的。</p>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://lemooooooon.github.io/tag/hti4EUpP-/" class="tag">
-                    python
+                  <a href="https://lemooooooon.github.io/tag/eDZ7NULwE/" class="tag">
+                    ES6
                   </a>
                 
-                  <a href="https://lemooooooon.github.io/tag/814ezZ9Nl/" class="tag">
-                    pandas
+                  <a href="https://lemooooooon.github.io/tag/s1ZTdUUSW/" class="tag">
+                    JavaScript
+                  </a>
+                
+                  <a href="https://lemooooooon.github.io/tag/nbLAsc-UA/" class="tag">
+                    前端
                   </a>
                 
               </div>
@@ -141,9 +154,9 @@ iloc函数为Selection by Position，即按位置选择数据，即第n行，第
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://lemooooooon.github.io/post/html-biao-ge/">
+                <a href="https://lemooooooon.github.io/post/wo-de-jian-li/">
                   <h3 class="post-title">
-                    HTML表格
+                    我的简历
                   </h3>
                 </a>
               </div>
