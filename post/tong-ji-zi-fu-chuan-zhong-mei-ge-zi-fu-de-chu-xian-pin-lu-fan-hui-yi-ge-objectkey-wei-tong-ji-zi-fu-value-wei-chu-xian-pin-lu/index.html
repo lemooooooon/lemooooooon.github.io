@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>ES6新特性 · Spread / Rest 操作符 | Lemooooooon</title>
+<title>统计字符串中每个字符的出现频率，返回一个 Object，key 为统计字符，value 为出现频率 | Lemooooooon</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,14 +18,13 @@
 
 
 
-    <meta name="description" content="rest
-Rest运算符用于获取函数调用时传入的参数。举个栗子：
-let fun = function(...args) {
-    console.log(args);
-}
-
-const list = [&quot;Peter&quot;..." />
-    <meta name="keywords" content="ES6,JavaScript,前端" />
+    <meta name="description" content="
+function count(str) {
+    let obj={};
+    for(let i =0;i&lt;str.length;i++){
+        if(str[i]!=='\0'){
+            let..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -100,61 +99,35 @@ const list = [&quot;Peter&quot;..." />
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">ES6新特性 · Spread / Rest 操作符</h2>
+            <h2 class="post-title">统计字符串中每个字符的出现频率，返回一个 Object，key 为统计字符，value 为出现频率</h2>
             <div class="post-date">2020-08-03</div>
             
             <div class="post-content" v-pre>
-              <h1 id="rest">rest</h1>
-<p>Rest运算符用于获取函数调用时传入的参数。举个栗子：</p>
-<pre><code>let fun = function(...args) {
-    console.log(args);
-}
-
-const list = [&quot;Peter&quot;, &quot;Lily&quot;, &quot;Tom&quot;];
-fun(list);    // [&quot;Peter&quot;, &quot;Lily&quot;, &quot;Tom&quot;]
-</code></pre>
-<h1 id="spread">spread</h1>
-<p>扩展运算符（spread）是三个点（...）。它好比 rest 参数的逆运算，<strong>将一个数组转为用逗号分隔的参数序列。</strong><br>
-Spread运算符用于数组的构造，析构，以及在函数调用时使用数组填充参数列表。再举个栗子：</p>
-<pre><code>/*
-** 使用Spread运算符合并数组
-*/
-const list1 = [&quot;Peter&quot;, &quot;Tom&quot;];
-const list2 = [&quot;Lily&quot;, &quot;Mary&quot;];
-const list = [...list1, ...list2];
-console.log(list); // [&quot;Peter&quot;, &quot;Tom&quot;, &quot;Lily&quot;, &quot;Mary&quot;]]
-
-/*
-** 使用Spread运算符析构数组
-*/
-const [person, ...list3] = list;
-console.log(person);        // Peter
-console.log(list3);         // [&quot;Tom&quot;, &quot;Lily&quot;, &quot;Mary&quot;]</code></pre>
+              <figure data-type="image" tabindex="1"><img src="https://lemooooooon.github.io/post-images/1596462043496.png" alt="" loading="lazy"></figure>
+<pre><code>function count(str) {
+    let obj={};
+    for(let i =0;i&lt;str.length;i++){
+        if(str[i]!=='\0'){
+            let key=str[i];
+            if(obj[key]!==undefined){
+                obj[key]++;
+            }
+            else{
+                obj[key]=1;
+            }
+        }
+    }
+    return obj;
+}</code></pre>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://lemooooooon.github.io/tag/eDZ7NULwE/" class="tag">
-                    ES6
-                  </a>
-                
-                  <a href="https://lemooooooon.github.io/tag/s1ZTdUUSW/" class="tag">
-                    JavaScript
-                  </a>
-                
-                  <a href="https://lemooooooon.github.io/tag/nbLAsc-UA/" class="tag">
-                    前端
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://lemooooooon.github.io/post/es6-xin-te-xing-die-dai-qi-iteratorforof-he-forin/">
+                <a href="https://lemooooooon.github.io/post/mei-tuan-she-zhao-mian-jing/">
                   <h3 class="post-title">
-                    ES6新特性 · 迭代器iterator、for...of和for...in
+                    美团·社招·面经
                   </h3>
                 </a>
               </div>

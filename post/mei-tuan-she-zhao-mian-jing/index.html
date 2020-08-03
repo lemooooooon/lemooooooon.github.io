@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>美团·社招·面经 | Lemooooooon</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://lemooooooon.github.io/favicon.ico?v=1596462081328">
+<link rel="stylesheet" href="https://lemooooooon.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="作者：牛一博
+链接：https://www.nowcoder.com/discuss/463227
+来源：牛客网
+一面是电话面试,因为在疫情期间，先了解下
+首先是简单自我介绍，面试官是一位小姐姐，然后开始提问题
+1.垂直居中，水平居中的实现..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://lemooooooon.github.io">
+        <img src="https://lemooooooon.github.io/images/avatar.png?v=1596462081328" class="site-logo">
+        <h1 class="site-title">Lemooooooon</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/lemooooooon" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Drying my clothes here.
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://lemooooooon.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">美团·社招·面经</h2>
+            <div class="post-date">2020-08-03</div>
+            
+            <div class="post-content" v-pre>
+              <p>作者：牛一博<br>
+链接：https://www.nowcoder.com/discuss/463227<br>
+来源：牛客网</p>
+<p>一面是电话面试,因为在疫情期间，先了解下<br>
+首先是简单自我介绍，面试官是一位小姐姐，然后开始提问题<br>
+1.垂直居中，水平居中的实现方法<br>
+2..如何实现两边固定宽度，中间自动适应的界面效果，用css写出几种来<br>
+3.使用了es6的哪些api,let const var的区别,还有其他api使用的使用<br>
+4.正则表达式的类型是什么？声明两个相同内容的正则如let a= /b/i; let b= /b/i; a <mark>b ? a</mark>=b?<br>
+5.webpack了解多少，使用了哪些功能<br>
+6.图片的优化有哪些体现<br>
+7.类数组转数组使用什么方式<br>
+8.数组去重的方式<br>
+后面的记不太清楚了，是比较基础的内容，可能是看我前端工作经验没那么多，我之前是做andorid的，后面才转的前端</p>
+<p>二面是去金山现场去面试<br>
+面试官是两个人，一位是技术主管，另一位是上次电话的面试的同学<br>
+由于之前没有面试前端的经历，然后准备不足，到现场非常的紧张，<br>
+1.先问了我有没有自定义过组件，然后让我写一个弹窗的组件，说下思维，然后提到了键盘事件的使用，和添加事件的位置。<br>
+2.写一个主题皮肤的功能，想下用什么方式，之前没做过，答得比较不符合要求，后面看看了下antd的，替换导入的html替换css<br>
+样式就好了。<br>
+3.然后就是多语言的思路，我说了本地数据库，然后根据页面数据区查询，面试官也不太满意<br>
+4.webpack打包，假如你有两个项目，使用了相同的内容，只有部分不同，如何配置打包，不打包无用的资源。<br>
+5.二分法和的使用场景，和手写<br>
+6.本地数据查询，10000条数据的中进行模糊查询，如何不卡顿，当时没打上来，应该分片查询就可以了,然后防抖和限流<br>
+7.优化首屏，如何懒加载，<br>
+8.xss和csrf 的问题，如何避免。<br>
+9.工作线程，应该就是work,面试时候没明白<br>
+10.冒泡和捕获</p>
+<p>最终的结果是面试失败，由于准备不足，基础知识没有学的透彻，面试官对细节比较注重，虽然面试备受打击，但是沉定思痛后必须要好好学习一波了，平时积累的太少了<br>
+建议面试的同学，先刷一遍红宝书，es6, letcode, 整体面试难度没那么大，更注重基础和细节</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://lemooooooon.github.io/post/es6-xin-te-xing-yun-xu-zai-dui-xiang-zhong-shi-yong-super-fang-fa/">
+                  <h3 class="post-title">
+                    ES6新特性 · 允许在对象中使用super方法
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
