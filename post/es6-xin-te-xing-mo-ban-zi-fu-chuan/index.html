@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>公考 | Lemooooooon</title>
+<title>ES6新特性 · 模板字符串 | Lemooooooon</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,9 @@
 
 
 
-    <meta name="description" content="Drying my clothes here.">
+    <meta name="description" content="在过去我们想要将字符串和变量拼接起来，只能通过运算符“+”来实现，若内容过多还要用“\”来表示换行，如：
+var person = {name: &quot;Peter&quot;, age: 22, career: &quot;stude..." />
+    <meta name="keywords" content="ES6,JavaScript,前端" />
   </head>
   <body>
     <div id="app" class="main">
@@ -92,29 +94,54 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: 公考</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://lemooooooon.github.io/post/xue-xi-zong-jie-1/">
-                  <h2 class="post-title">学习总结（1）</h2>
-                </a>
-                <div class="post-date">
-                  2020-07-30
-                </div>
-                <div class="post-abstract">
-                  <p>兵马未动，粮草先行：什么是申论？</p>
+          <div class="post-detail">
+            <h2 class="post-title">ES6新特性 · 模板字符串</h2>
+            <div class="post-date">2020-08-03</div>
+            
+            <div class="post-content" v-pre>
+              <p>在过去我们想要将字符串和变量拼接起来，只能通过运算符“+”来实现，若内容过多还要用“\”来表示换行，如：</p>
+<pre><code>var person = {name: &quot;Peter&quot;, age: 22, career: &quot;student&quot;};
+$(&quot;.introduction&quot;).html(&quot;Hello, my name is &quot; + person.name + &quot;, and my \
+career is &quot; + person.career + &quot;.&quot;);
+</code></pre>
+<p>而在ES6中，可以将反引号（``）将内容括起来，在反引号中，可以使用${}来写入需要引用到的变量。如：</p>
+<pre><code>var person = {name: &quot;Peter&quot;, age: 22, career: &quot;student&quot;};
+$(&quot;.introduction&quot;).html(`Hello, my name is ${person.name}, and my career is ${person.career}.`);
+</code></pre>
+<p>所以在ES6中，我们可以更方便地将字符串和变量连接起来。</p>
 
-                </div>
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://lemooooooon.github.io/tag/eDZ7NULwE/" class="tag">
+                    ES6
+                  </a>
+                
+                  <a href="https://lemooooooon.github.io/tag/s1ZTdUUSW/" class="tag">
+                    JavaScript
+                  </a>
+                
+                  <a href="https://lemooooooon.github.io/tag/nbLAsc-UA/" class="tag">
+                    前端
+                  </a>
+                
               </div>
-              
-            </article>
-          
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://lemooooooon.github.io/post/es6-xin-te-xing-let-he-const/">
+                  <h3 class="post-title">
+                    ES6新特性 · let和const
+                  </h3>
+                </a>
+              </div>
+            
 
-          <div class="pagination-container">
-  
-  
-</div>
+            
+
+          </div>
 
         </div>
       </div>
