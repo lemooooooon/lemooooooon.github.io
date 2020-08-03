@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>CSS介绍 | Lemooooooon</title>
+<title>ES6新特性 · 函数默认值设置 | Lemooooooon</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,26 +18,11 @@
 
 
 
-    <meta name="description" content="CSS （ Cascading Style Sheet）层叠样式表，主要用来控制网页的样式。
-
-CSS 的选择器区分大小写，因此要谨慎使用大写。
-CSS 允许控制以下样式：
-
-
-
-名称
-关键字
-
-
-
-
-颜色
-color
-
-
-背景
-backg..." />
-    <meta name="keywords" content="前端" />
+    <meta name="description" content="在这之前，我们想要在函数中设置默认值，只能通过以下方法进行设置：
+function printText(text){
+    var text = text || &quot;hello world!&quot;;
+    console...." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -112,97 +97,36 @@ backg..." />
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">CSS介绍</h2>
-            <div class="post-date">2020-06-18</div>
-            
-              <div class="feature-container" style="background-image: url('https://lemooooooon.github.io/post-images/css-jie-shao.png')">
-              </div>
+            <h2 class="post-title">ES6新特性 · 函数默认值设置</h2>
+            <div class="post-date">2020-08-03</div>
             
             <div class="post-content" v-pre>
-              <p>CSS （ Cascading Style Sheet）层叠样式表，主要用来控制网页的样式。</p>
-<!-- more -->
-<p>CSS 的选择器区分大小写，因此要谨慎使用大写。</p>
-<p>CSS 允许控制以下样式：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">名称</th>
-<th style="text-align:left">关键字</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">颜色</td>
-<td style="text-align:left">color</td>
-</tr>
-<tr>
-<td style="text-align:left">背景</td>
-<td style="text-align:left">background</td>
-</tr>
-<tr>
-<td style="text-align:left">字体</td>
-<td style="text-align:left">font</td>
-</tr>
-<tr>
-<td style="text-align:left">位置</td>
-<td style="text-align:left">position</td>
-</tr>
-<tr>
-<td style="text-align:left">显示</td>
-<td style="text-align:left">display</td>
-</tr>
-<tr>
-<td style="text-align:left">边框</td>
-<td style="text-align:left">border</td>
-</tr>
-<tr>
-<td style="text-align:left">内边距</td>
-<td style="text-align:left">padding</td>
-</tr>
-<tr>
-<td style="text-align:left">外边距</td>
-<td style="text-align:left">margin</td>
-</tr>
-<tr>
-<td style="text-align:left">行高</td>
-<td style="text-align:left">line-height</td>
-</tr>
-<tr>
-<td style="text-align:left">装饰</td>
-<td style="text-align:left">text-decoration</td>
-</tr>
-<tr>
-<td style="text-align:left">过渡</td>
-<td style="text-align:left">transtion</td>
-</tr>
-<tr>
-<td style="text-align:left">变化</td>
-<td style="text-align:left">transform</td>
-</tr>
-<tr>
-<td style="text-align:left">动画</td>
-<td style="text-align:left">animation</td>
-</tr>
-</tbody>
-</table>
-<p>CSS 背后的思想是，通过选择器来定位 **DOM（文档对象模型）**的元素，然后将各种样式规则应用在元素上，从而改变元素在页面上的显示方式</p>
+              <p>在这之前，我们想要在函数中设置默认值，只能通过以下方法进行设置：</p>
+<pre><code>function printText(text){
+    var text = text || &quot;hello world!&quot;;
+    console.log(text);
+}
+
+printText(&quot;My name is Peter&quot;);          // &quot;My name is Peter&quot;;
+printText();                            // &quot;hello world!&quot;;    
+</code></pre>
+<p>但是在ES6中定义了一种新方法，开发者可以直接使用如下方法设置函数的参数默认值：</p>
+<pre><code>function printText(text = &quot;hello world!&quot;) {
+    console.log(text);
+}
+
+printText(&quot;My name is Peter&quot;);  // &quot;My name is Peter&quot;;
+printText();                    // &quot;hello world!&quot;;
+</code></pre>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://lemooooooon.github.io/tag/nbLAsc-UA/" class="tag">
-                    前端
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://lemooooooon.github.io/post/di-yi-pian-blog/">
+                <a href="https://lemooooooon.github.io/post/es6-xin-te-xing-jian-tou-han-shu/">
                   <h3 class="post-title">
-                    第一篇blog
+                    ES6新特性 · 箭头函数
                   </h3>
                 </a>
               </div>
