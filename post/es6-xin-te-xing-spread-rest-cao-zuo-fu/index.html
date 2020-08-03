@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>CSS介绍 | Lemooooooon</title>
+<title>ES6新特性 · Spread / Rest 操作符 | Lemooooooon</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,26 +18,14 @@
 
 
 
-    <meta name="description" content="CSS （ Cascading Style Sheet）层叠样式表，主要用来控制网页的样式。
+    <meta name="description" content="rest
+Rest运算符用于获取函数调用时传入的参数。举个栗子：
+let fun = function(...args) {
+    console.log(args);
+}
 
-CSS 的选择器区分大小写，因此要谨慎使用大写。
-CSS 允许控制以下样式：
-
-
-
-名称
-关键字
-
-
-
-
-颜色
-color
-
-
-背景
-backg..." />
-    <meta name="keywords" content="前端" />
+const list = [&quot;Peter&quot;..." />
+    <meta name="keywords" content="ES6,JavaScript,前端" />
   </head>
   <body>
     <div id="app" class="main">
@@ -112,84 +100,48 @@ backg..." />
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">CSS介绍</h2>
-            <div class="post-date">2020-06-18</div>
-            
-              <div class="feature-container" style="background-image: url('https://lemooooooon.github.io/post-images/css-jie-shao.png')">
-              </div>
+            <h2 class="post-title">ES6新特性 · Spread / Rest 操作符</h2>
+            <div class="post-date">2020-08-03</div>
             
             <div class="post-content" v-pre>
-              <p>CSS （ Cascading Style Sheet）层叠样式表，主要用来控制网页的样式。</p>
-<!-- more -->
-<p>CSS 的选择器区分大小写，因此要谨慎使用大写。</p>
-<p>CSS 允许控制以下样式：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">名称</th>
-<th style="text-align:left">关键字</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">颜色</td>
-<td style="text-align:left">color</td>
-</tr>
-<tr>
-<td style="text-align:left">背景</td>
-<td style="text-align:left">background</td>
-</tr>
-<tr>
-<td style="text-align:left">字体</td>
-<td style="text-align:left">font</td>
-</tr>
-<tr>
-<td style="text-align:left">位置</td>
-<td style="text-align:left">position</td>
-</tr>
-<tr>
-<td style="text-align:left">显示</td>
-<td style="text-align:left">display</td>
-</tr>
-<tr>
-<td style="text-align:left">边框</td>
-<td style="text-align:left">border</td>
-</tr>
-<tr>
-<td style="text-align:left">内边距</td>
-<td style="text-align:left">padding</td>
-</tr>
-<tr>
-<td style="text-align:left">外边距</td>
-<td style="text-align:left">margin</td>
-</tr>
-<tr>
-<td style="text-align:left">行高</td>
-<td style="text-align:left">line-height</td>
-</tr>
-<tr>
-<td style="text-align:left">装饰</td>
-<td style="text-align:left">text-decoration</td>
-</tr>
-<tr>
-<td style="text-align:left">过渡</td>
-<td style="text-align:left">transtion</td>
-</tr>
-<tr>
-<td style="text-align:left">变化</td>
-<td style="text-align:left">transform</td>
-</tr>
-<tr>
-<td style="text-align:left">动画</td>
-<td style="text-align:left">animation</td>
-</tr>
-</tbody>
-</table>
-<p>CSS 背后的思想是，通过选择器来定位 **DOM（文档对象模型）**的元素，然后将各种样式规则应用在元素上，从而改变元素在页面上的显示方式</p>
+              <h1 id="rest">rest</h1>
+<p>Rest运算符用于获取函数调用时传入的参数。举个栗子：</p>
+<pre><code>let fun = function(...args) {
+    console.log(args);
+}
+
+const list = [&quot;Peter&quot;, &quot;Lily&quot;, &quot;Tom&quot;];
+fun(list);    // [&quot;Peter&quot;, &quot;Lily&quot;, &quot;Tom&quot;]
+</code></pre>
+<h1 id="spread">spread</h1>
+<p>扩展运算符（spread）是三个点（...）。它好比 rest 参数的逆运算，<strong>将一个数组转为用逗号分隔的参数序列。</strong><br>
+Spread运算符用于数组的构造，析构，以及在函数调用时使用数组填充参数列表。再举个栗子：</p>
+<pre><code>/*
+** 使用Spread运算符合并数组
+*/
+const list1 = [&quot;Peter&quot;, &quot;Tom&quot;];
+const list2 = [&quot;Lily&quot;, &quot;Mary&quot;];
+const list = [...list1, ...list2];
+console.log(list); // [&quot;Peter&quot;, &quot;Tom&quot;, &quot;Lily&quot;, &quot;Mary&quot;]]
+
+/*
+** 使用Spread运算符析构数组
+*/
+const [person, ...list3] = list;
+console.log(person);        // Peter
+console.log(list3);         // [&quot;Tom&quot;, &quot;Lily&quot;, &quot;Mary&quot;]</code></pre>
 
             </div>
             
               <div class="tag-container">
+                
+                  <a href="https://lemooooooon.github.io/tag/eDZ7NULwE/" class="tag">
+                    ES6
+                  </a>
+                
+                  <a href="https://lemooooooon.github.io/tag/s1ZTdUUSW/" class="tag">
+                    JavaScript
+                  </a>
                 
                   <a href="https://lemooooooon.github.io/tag/nbLAsc-UA/" class="tag">
                     前端
@@ -200,9 +152,9 @@ backg..." />
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://lemooooooon.github.io/post/di-yi-pian-blog/">
+                <a href="https://lemooooooon.github.io/post/es6-xin-te-xing-die-dai-qi-iteratorforof-he-forin/">
                   <h3 class="post-title">
-                    第一篇blog
+                    ES6新特性 · 迭代器iterator、for...of和for...in
                   </h3>
                 </a>
               </div>

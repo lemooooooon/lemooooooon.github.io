@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>ES6新特性 · 对象和数组解构 | Lemooooooon</title>
+<title>ES6新特性 · 迭代器iterator、for...of和for...in | Lemooooooon</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,10 +18,9 @@
 
 
 
-    <meta name="description" content="ES6可以将对象中的属性或者数组中的元素进行解构，操作方式与前面所提到的Rest和Spread操作符类似，看一下下面这个栗子：
-let person = {
-    name: &quot;Peter&quot;,
-    age: 22,..." />
+    <meta name="description" content="什么是iterator，
+ES6 借鉴 C++、Java、C# 和 Python 语言，引入了for...of循环，作为遍历所有数据结构的统一的方法。
+一个数据结构只要部署了Symbol.iterator属性，就被视为具有 iterator..." />
     <meta name="keywords" content="ES6,JavaScript,前端" />
   </head>
   <body>
@@ -97,20 +96,41 @@ let person = {
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">ES6新特性 · 对象和数组解构</h2>
+            <h2 class="post-title">ES6新特性 · 迭代器iterator、for...of和for...in</h2>
             <div class="post-date">2020-08-03</div>
             
             <div class="post-content" v-pre>
-              <p>ES6可以将对象中的属性或者数组中的元素进行解构，操作方式与前面所提到的Rest和Spread操作符类似，看一下下面这个栗子：</p>
-<pre><code>let person = {
-    name: &quot;Peter&quot;,
-    age: 22,
-    career: &quot;student&quot;
+              <h1 id="什么是iterator">什么是iterator，</h1>
+<p>ES6 借鉴 C++、Java、C# 和 Python 语言，引入了for...of循环，作为遍历所有数据结构的统一的方法。</p>
+<p>一个数据结构只要部署了Symbol.iterator属性，就被视为具有 iterator 接口，就可以用for...of循环遍历它的成员。也就是说，for...of循环内部调用的是数据结构的Symbol.iterator方法。</p>
+<p>for...of循环可以使用的范围包括数组、Set 和 Map 结构、某些类似数组的对象（比如arguments对象、DOM NodeList 对象）、后文的 Generator 对象，以及字符串。</p>
+<h1 id="forof-和-forin">for...of 和 for...in</h1>
+<p>无论是for…in还是for…of语句，都是用来迭代数据，它们之间的最主要的区别在于它们的<strong>迭代方式不同</strong>。</p>
+<p>for…in 语句<strong>以原始插入顺序迭代对象的可枚举属性</strong>，简单理解就是for...in是用来循环遍历属性，遍历出的是自身和原型上的可枚举非symbol属性，<strong>但是遍历不一定按照顺序</strong>（tips：for...in在ES5中就已经出现了）<br>
+for…of 语句<strong>遍历可迭代对象定义要迭代的数据</strong>，也就是说，for...of只可以循环可迭代对象的可迭代属性，<strong>不可迭代属性在循环中被忽略了</strong>。（tips：for...of是ES6才提出来的）<br>
+关于for...in和for...of的用法，可以看以下栗子：</p>
+<pre><code>Object.prototype.objCustom = function() {};
+Array.prototype.arrCustom = function() {};
+
+let iterable = [3, 5, 7];
+iterable.foo = 'hello';
+//for in 会继承
+for (let i in iterable) {
+    console.log(i); // 依次打印 0, 1, 2, &quot;foo&quot;, &quot;arrCustom&quot;, &quot;objCustom&quot;
 }
 
-const {name, age, career } = person;
-console.log(`Hello, my name is ${name}, and my career is ${career}.`);   
-//Hello, my name is Peter, and my career is student.</code></pre>
+for (let i in iterable) {
+    if (iterable.hasOwnProperty(i)) {
+        console.log(i); // 依次打印 0, 1, 2, &quot;foo&quot;
+    }
+}
+
+// for of
+for (let i of iterable) {
+    console.log(i); // 依次打印 3, 5, 7
+}
+</code></pre>
+<p>在实际开发过程中，似乎不太建议使用for...in，因为不同环境下对for...in的遍历算法的实现不一样，而且在for...in的过程中对这个对象属性的添加，修改，删除操作不能被保证，** MDN不建议用for...in来遍历对象**。</p>
 
             </div>
             
@@ -133,9 +153,9 @@ console.log(`Hello, my name is ${name}, and my career is ${career}.`);
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://lemooooooon.github.io/post/es6-xin-te-xing-er-jin-zhi-he-ba-jin-zhi-de-zi-mian-liang/">
+                <a href="https://lemooooooon.github.io/post/es6-xin-te-xing-class/">
                   <h3 class="post-title">
-                    ES6新特性 · 二进制和八进制的字面量
+                    ES6新特性 · class
                   </h3>
                 </a>
               </div>
