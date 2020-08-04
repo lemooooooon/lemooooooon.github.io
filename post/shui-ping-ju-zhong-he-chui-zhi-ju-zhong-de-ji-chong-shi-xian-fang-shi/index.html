@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>HTML表格 | Lemooooooon</title>
+<title>水平居中和垂直居中的几种实现方式 | Lemooooooon</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,20 +18,11 @@
 
 
 
-    <meta name="description" content="表格
-dd
-    dt
-    dd  //dd、dt同一级，不可嵌套
-
-无序表
-ul
-    li
-
-有序表
-ol
-    li
-..." />
-    <meta name="keywords" content="HTML,前端" />
+    <meta name="description" content="水平居中
+1. 如果是行内元素，要实现水平居中只需要将父元素设置为text-align=center
+2. 如果是固定宽度的块状元素，设置该元素本身为margin: 0 auto
+3. css3的新属性fit-content，自动将元素宽度..." />
+    <meta name="keywords" content="CSS,前端" />
   </head>
   <body>
     <div id="app" class="main">
@@ -106,29 +97,78 @@ ol
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">HTML表格</h2>
-            <div class="post-date">2020-07-16</div>
+            <h2 class="post-title">水平居中和垂直居中的几种实现方式</h2>
+            <div class="post-date">2020-08-04</div>
             
             <div class="post-content" v-pre>
-              <p>表格</p>
-<pre><code>dd
-    dt
-    dd  //dd、dt同一级，不可嵌套
+              <h1 id="水平居中">水平居中</h1>
+<h3 id="1-如果是行内元素要实现水平居中只需要将父元素设置为text-aligncenter">1. 如果是行内元素，要实现水平居中只需要将父元素设置为text-align=center</h3>
+<h3 id="2-如果是固定宽度的块状元素设置该元素本身为margin-0-auto">2. 如果是固定宽度的块状元素，设置该元素本身为margin: 0 auto</h3>
+<h3 id="3-css3的新属性fit-content自动将元素宽度缩小到内容的宽度然后使用margin0-auto可以轻松的实现水平居中目前只支持chrome和firefox">3. css3的新属性fit-content，自动将元素宽度缩小到内容的宽度，然后使用margin：0 auto可以轻松的实现水平居中(目前只支持chrome和FireFox)</h3>
+<pre><code>.son{
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width:fit-content;
+    margin:0 auto;
+}
 </code></pre>
-<p>无序表</p>
-<pre><code>ul
-    li
+<h3 id="4-绝对定位以及margin-left的负值实现水平居中">4. 绝对定位以及margin-left的负值实现水平居中</h3>
+<pre><code>.son {
+    position: absolute;
+    width: 50px;
+    left: 50%;
+    margin-left: -25px;（宽度的一半）
+    background-color: blue;
+    text-align: center;
+}
 </code></pre>
-<p>有序表</p>
-<pre><code>ol
-    li</code></pre>
+<h3 id="5-绝对定位left-right同时设置为0-同时设置margin0-auto">5. 绝对定位left right同时设置为0 同时设置margin：0 auto</h3>
+<pre><code>.son{
+    position: absolute;
+    width: 50px;
+    left: 0;
+    right: 0;
+    background-color: blue;
+    margin: 0 auto;
+    height: 100%;
+}
+</code></pre>
+<h1 id="垂直居中">垂直居中</h1>
+<h3 id="1-若元素为单行文本直接设置其text-align为父元素的高度">1. 若元素为单行文本，直接设置其text-align为父元素的高度</h3>
+<h3 id="2-利用position以及top-bottom属性">2. 利用position以及top bottom属性</h3>
+<pre><code>.son{
+    position:absolute;
+    height:固定;
+    top:0;
+    bottom:0;
+    margin:auto 0;
+}
+</code></pre>
+<h3 id="3-利用margin的负值">3. 利用margin的负值</h3>
+<pre><code>.son{
+    position:absolute;
+    top:50%;
+    height:固定;
+    margin-top:-0.5高度;
+}
+</code></pre>
+<h3 id="4-利用vertical-align">4. 利用vertical-align</h3>
+<pre><code>.parent::after, .son{
+    display:inline-block;
+    vertical-align:middle;
+}
+.parent::after{
+    content:'';
+    height:100%;
+}
+</code></pre>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://lemooooooon.github.io/tag/mpHxmWqLT/" class="tag">
-                    HTML
+                  <a href="https://lemooooooon.github.io/tag/vInVldQTz/" class="tag">
+                    CSS
                   </a>
                 
                   <a href="https://lemooooooon.github.io/tag/nbLAsc-UA/" class="tag">
@@ -140,9 +180,9 @@ ol
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://lemooooooon.github.io/post/github-shi-yong-sou-suo-zhi-ling/">
+                <a href="https://lemooooooon.github.io/post/tong-ji-zi-fu-chuan-zhong-mei-ge-zi-fu-de-chu-xian-pin-lu-fan-hui-yi-ge-objectkey-wei-tong-ji-zi-fu-value-wei-chu-xian-pin-lu/">
                   <h3 class="post-title">
-                    GitHub 实用搜索指令
+                    统计字符串中每个字符的出现频率，返回一个 Object，key 为统计字符，value 为出现频率
                   </h3>
                 </a>
               </div>
