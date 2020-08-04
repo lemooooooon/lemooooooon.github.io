@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>ES6新特性 · 对象和数组解构 | Lemooooooon</title>
+<title>几种左右固定宽度，中间自适应布局方法 | Lemooooooon</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,11 +18,17 @@
 
 
 
-    <meta name="description" content="ES6可以将对象中的属性或者数组中的元素进行解构，操作方式与前面所提到的Rest和Spread操作符类似，看一下下面这个栗子：
-let person = {
-    name: &quot;Peter&quot;,
-    age: 22,..." />
-    <meta name="keywords" content="ES6,JavaScript,前端" />
+    <meta name="description" content="圣杯布局：
+
+使用float实现
+&lt;style&gt;
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        min-width: 550px;..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -97,45 +103,142 @@ let person = {
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">ES6新特性 · 对象和数组解构</h2>
-            <div class="post-date">2020-08-03</div>
+            <h2 class="post-title">几种左右固定宽度，中间自适应布局方法</h2>
+            <div class="post-date">2020-08-04</div>
             
             <div class="post-content" v-pre>
-              <p>ES6可以将对象中的属性或者数组中的元素进行解构，操作方式与前面所提到的Rest和Spread操作符类似，看一下下面这个栗子：</p>
-<pre><code>let person = {
-    name: &quot;Peter&quot;,
-    age: 22,
-    career: &quot;student&quot;
+              <p>圣杯布局：</p>
+<!-- more -->
+<h1 id="使用float实现">使用float实现</h1>
+<pre><code>&lt;style&gt;
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        min-width: 550px;
+    }
+    .container &gt; div {
+        min-height: 200px;
+    }
+    .left {
+        float: left;
+        width: 200px;
+        background: #ffbbff;
+    }
+    .middle {
+        margin: 0 200px;
+        background: #bfefff;
+    }
+    .right {
+        float: right;
+        width: 200px;
+        background: #eeee00;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;
+    &lt;div class=&quot;middle&quot;&gt;middle&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<h1 id="圣杯布局">圣杯布局</h1>
+<pre><code>&lt;div id=&quot;header&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;container&quot;&gt;
+&lt;div id=&quot;center&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;left&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;right&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;footer&quot;&gt;&lt;/div&gt;
+
+body {
+min-width: 550px;
 }
 
-const {name, age, career } = person;
-console.log(`Hello, my name is ${name}, and my career is ${career}.`);   
-//Hello, my name is Peter, and my career is student.</code></pre>
+#container {
+padding-left: 200px; 
+padding-right: 150px;
+}
+
+#container .column {
+float: left;
+}
+
+#center {
+width: 100%;
+}
+
+#left {
+width: 200px; 
+margin-left: -100%;
+position: relative;
+right: 200px;
+}
+
+#right {
+width: 150px; 
+margin-right: -150px; 
+}
+
+#footer {
+clear: both;
+}
+</code></pre>
+<h1 id="双飞翼布局">双飞翼布局</h1>
+<pre><code>&lt;body&gt;
+&lt;div id=&quot;header&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;container&quot; class=&quot;column&quot;&gt;
+    &lt;div id=&quot;center&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;left&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;right&quot; class=&quot;column&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;footer&quot;&gt;&lt;/div&gt;
+&lt;body&gt;
+
+#container {
+width: 100%;
+body {
+min-width: 500px;
+}
+
+#container {
+width: 100%;
+}
+
+.column {
+float: left;
+}
+        
+#center {
+margin-left: 200px;
+margin-right: 150px;
+}
+        
+#left {
+width: 200px; 
+margin-left: -100%;
+}
+        
+#right {
+width: 150px; 
+margin-left: -150px;
+}
+        
+#footer {
+clear: both;
+}</code></pre>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://lemooooooon.github.io/tag/eDZ7NULwE/" class="tag">
-                    ES6
-                  </a>
-                
-                  <a href="https://lemooooooon.github.io/tag/s1ZTdUUSW/" class="tag">
-                    JavaScript
-                  </a>
-                
-                  <a href="https://lemooooooon.github.io/tag/nbLAsc-UA/" class="tag">
-                    前端
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://lemooooooon.github.io/post/es6-xin-te-xing-er-jin-zhi-he-ba-jin-zhi-de-zi-mian-liang/">
+                <a href="https://lemooooooon.github.io/post/shui-ping-ju-zhong-he-chui-zhi-ju-zhong-de-ji-chong-shi-xian-fang-shi/">
                   <h3 class="post-title">
-                    ES6新特性 · 二进制和八进制的字面量
+                    水平居中和垂直居中的几种实现方式
                   </h3>
                 </a>
               </div>
