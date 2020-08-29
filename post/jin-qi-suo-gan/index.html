@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>ES6新特性 · 箭头函数 | Lemooooooon</title>
+<title>近期所感 | Lemooooooon</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,12 +18,8 @@
 
 
 
-    <meta name="description" content="在ES6中引入了一种新的函数表达方式，它是函数的一种简写方法，有以下三个特点：
-
-不需要用关键字function来定义函数；
-一般情况下可以省略return；
-在箭头函数内部，this并不会跟其他函数一样指向调用它的对象，而是继承上下文的t..." />
-    <meta name="keywords" content="ES6,JavaScript,前端" />
+    <meta name="description" content="生活不易，每个人都有一段黑历史，被扒的人和扒的人其实都会感觉开心的。所以，我们就无所谓怎么过，只要这段历史不黑，生活就是有趣的。小邹最近很没有耐心，一方面迫于工作压力，另一方面在于内心深处的逃避。不喜欢别人的目光，总会想象别人背地里的鄙夷，..." />
+    <meta name="keywords" content="心情" />
   </head>
   <body>
     <div id="app" class="main">
@@ -104,75 +100,22 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">ES6新特性 · 箭头函数</h2>
-            <div class="post-date">2020-08-03</div>
+            <h2 class="post-title">近期所感</h2>
+            <div class="post-date">2020-08-29</div>
             
             <div class="post-content" v-pre>
-              <p>在ES6中引入了一种新的函数表达方式，它是函数的一种简写方法，有以下三个特点：</p>
-<ol>
-<li>不需要用关键字function来定义函数；</li>
-<li>一般情况下可以省略return；</li>
-<li>在箭头函数内部，this并不会跟其他函数一样指向调用它的对象，而是<strong>继承上下文的this指向的对象</strong>。</li>
-</ol>
-<p>在上面的三点中，第三点尤为重要，初学者在使用时经常会忽略这一点。<br>
-下面举几个箭头函数的使用方法：</p>
-<pre><code>/*
-** 对应上面所说的第3点
-** 在箭头函数中，this的指向与它的上下文有关
-** 在本例中，箭头函数fun的上下文是window，所以this指向的也是window
-*/
-window.val = 12;
-let fun = () =&gt; {
-    let val = 13;
-    console.log(val);               // 13
-    console.log(this.val);          // 12
-    console.log(this == window);    // true
-}
-fun();
-
-/*
-** 普通函数使用
-*/
-
-let add = function(a, b){
-    return a + b;
-}
-
-/*
-** 箭头函数使用
-*/
-let add1 = (a, b) =&gt; a + b;
-
-// 当参数只有一个时，可以将括号省略
-let sqrt = a =&gt; a*a;</code></pre>
+              <p>生活不易，每个人都有一段黑历史，被扒的人和扒的人其实都会感觉开心的。所以，我们就无所谓怎么过，只要这段历史不黑，生活就是有趣的。小邹最近很没有耐心，一方面迫于工作压力，另一方面在于内心深处的逃避。不喜欢别人的目光，总会想象别人背地里的鄙夷，但是好像小邹做的很规矩，小邹越规矩便越心虚。觉得烦躁，并不是风声水流太聒噪，可能小邹心里也难以平静下来。游戏、运动、人际交往、娱乐都是毒药，给人短暂的快乐和长久的失落。酒肉穿肠，变化的是酒肉，停滞的是躯壳。小邹内心抗拒的，其实才是最重要的。在肉身进化之后，可能内心才更难以宁静。</p>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://lemooooooon.github.io/tag/eDZ7NULwE/" class="tag">
-                    ES6
-                  </a>
-                
-                  <a href="https://lemooooooon.github.io/tag/s1ZTdUUSW/" class="tag">
-                    JavaScript
-                  </a>
-                
-                  <a href="https://lemooooooon.github.io/tag/nbLAsc-UA/" class="tag">
-                    前端
+                  <a href="https://lemooooooon.github.io/tag/xvtPlQmFf/" class="tag">
+                    心情
                   </a>
                 
               </div>
             
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://lemooooooon.github.io/post/es6-xin-te-xing-mo-ban-zi-fu-chuan/">
-                  <h3 class="post-title">
-                    ES6新特性 · 模板字符串
-                  </h3>
-                </a>
-              </div>
             
 
             
