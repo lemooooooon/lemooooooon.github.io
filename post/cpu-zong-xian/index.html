@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>CPU 总线 | Lemooooooon</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://lemooooooon.github.io/favicon.ico?v=1702980875931">
+<link rel="stylesheet" href="https://lemooooooon.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="计算机靠电信号传递信息，电信号用导线来传送，那么CPU与芯片的导线，就是总线（bus）。
+
+总线就是连接多个计算机部件的数据通信规范。
+地址
+动作
+内容
+
+CPU电源引脚与内存数据引脚占了大半壁江山。
+大约1/4～1/3是供电引脚和差分参考..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://lemooooooon.github.io">
+        <img src="https://lemooooooon.github.io/images/avatar.png?v=1702980875931" class="site-logo">
+        <h1 class="site-title">Lemooooooon</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Drying my clothes here.
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://lemooooooon.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">CPU 总线</h2>
+            <div class="post-date">2023-12-19</div>
+            
+            <div class="post-content" v-pre>
+              <p>计算机靠电信号传递信息，电信号用导线来传送，那么CPU与芯片的导线，就是总线（bus）。</p>
+<!-- more -->
+<p>总线就是连接多个计算机部件的数据通信规范。</p>
+<p>地址<br>
+动作<br>
+内容<br>
+<img src="https://lemooooooon.github.io/post-images/1702965713439.webp" alt="" loading="lazy"></p>
+<p>CPU电源引脚与内存数据引脚占了大半壁江山。<br>
+大约1/4～1/3是供电引脚和差分参考地引脚，4～6个晶振引脚，供电控制，内存（近7代Intel处理器/938接口以后AMD处理器），南桥/北桥接口，debug，内置显卡输出（如果有），SoC的那种还会把原有的南北桥功能集成进去所以还会有GPIO控制器，I2c，spi，UART，SATA，PCI-E，PCI，i2s，PCM之类的接口</p>
+<p><img src="https://lemooooooon.github.io/post-images/1702967996192.jpg" alt="" loading="lazy"><br>
+北桥芯片（Northbridge）： 北桥处理高速信号。北桥芯片连接的设备都是高速传输设备，包含 CPU、GPU、存储器与南桥的通信。北桥芯片也是 CPU 与外部连接的纽带；<br>
+南桥芯片（Southbridge）： 南桥处理低速信号。南桥芯片连接的大多是 I/O 设备，例如 PCI 总线、USB 适配器、显卡适配器、硬盘控制器；<br>
+内存控制器（Memory Controller）： 管理 CPU 和内存之间的总线数据传输，控制着存储器的读取和写入信号，并且定时刷新 DRAM 内的数据（DRAM 的存储单元包含电容，会自动漏电）；<br>
+内存总线（Memory Bus）： 连接北桥芯片与存储器的总线；<br>
+DMI 总线（Direct Media Interface）： 连接北桥芯片和南桥芯片的专用总线；<br>
+I/O 总线： 连接南桥芯片与 I/O 设备的总线；<br>
+PCI 局部总线： 连接高速 I/O 设备的标准；<br>
+ISA 局部总线： 连接低速 I/O 设备的标准。</p>
+<p><img src="https://lemooooooon.github.io/post-images/1702970284368.png" alt="" loading="lazy"><br>
+<img src="https://lemooooooon.github.io/post-images/1702970318241.webp" alt="" loading="lazy"><br>
+9900K大概可以分为5个部分：</p>
+<p>1、CPU核心：图中红框部分为一个核心，9900K一共有8个核心。早期的CPU其实就只有这么一个东西，但现在的CPU逐步发展，把一些周边的部件也集成在同一块半导体晶片上，因此传统的CPU就变成了现代CPU上的核心。此外，为了提高CPU的计算能力，单块CPU中的核心数量越来越多，就消费级市场来说，从2005第一款双核心CPU奔腾D发布到今天的单块CPU晶片有8个核心的i9-9900K。<br>
+2、三级缓存（Level 3 Cache，简写为L3、L3$、L3C、L3 Cache）：图中中间8个粉色块组成的三级缓存，用于临时存放内存中的一小部分数据。这里分成8小块，对应8个CPU核心。有时候L3也叫末级缓存（Last Level Cache，LLC），当然，对9900K这样具有三级缓存的CPU，L3才等同于LLC。有的老式CPU有的只有二级缓存，LLC就是L2；某些服务器使用的CPU有四级缓存，LLC则是指L4。<br>
+3、核心显卡：图中左边紫框部分，这个以后的文章中我们再介绍。<br>
+4、系统代理：图中右边绿色部分，这是负责连接CPU与其它部件的多个模块的集合。从上到下分别是：<br>
+（1）显示控制器：负责核心显卡输出；<br>
+（2）PCI-e控制器：负责CPU与外部IO设备连接，以后的文章我们会另外介绍；<br>
+（3）eDRAM控制器：这个其实9900K是没有的，某些定制型号会集成有特殊的内存，称为嵌入式动态随机访问存储（Embedded Dynamic Random-Access Memory, eDRAM）。一般来说eDRAM是作为核心显卡的专用显存使用，这个控制器就是负责从eDRAM读写数据的。<br>
+（4）内存控制器：负责CPU与内存连接，从内存中读写数据。<br>
+5、环形总线（RingBus）：把上面这些模块连接起来的，上图中标记着Ring的蓝色圈。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://lemooooooon.github.io/post/ge-ren-jian-li/">
+                  <h3 class="post-title">
+                    个人简历
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

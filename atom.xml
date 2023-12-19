@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://lemooooooon.github.io</id>
+    <title>Lemooooooon</title>
+    <updated>2023-12-19T10:14:42.923Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://lemooooooon.github.io"/>
+    <link rel="self" href="https://lemooooooon.github.io/atom.xml"/>
+    <subtitle>Drying my clothes here.</subtitle>
+    <logo>https://lemooooooon.github.io/images/avatar.png</logo>
+    <icon>https://lemooooooon.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, Lemooooooon</rights>
+    <entry>
+        <title type="html"><![CDATA[CPU 总线]]></title>
+        <id>https://lemooooooon.github.io/post/cpu-zong-xian/</id>
+        <link href="https://lemooooooon.github.io/post/cpu-zong-xian/">
+        </link>
+        <updated>2023-12-19T05:58:50.000Z</updated>
+        <summary type="html"><![CDATA[<p>计算机靠电信号传递信息，电信号用导线来传送，那么CPU与芯片的导线，就是总线（bus）。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>计算机靠电信号传递信息，电信号用导线来传送，那么CPU与芯片的导线，就是总线（bus）。</p>
+<!-- more -->
+<p>总线就是连接多个计算机部件的数据通信规范。</p>
+<p>地址<br>
+动作<br>
+内容<br>
+<img src="https://lemooooooon.github.io/post-images/1702965713439.webp" alt="" loading="lazy"></p>
+<p>CPU电源引脚与内存数据引脚占了大半壁江山。<br>
+大约1/4～1/3是供电引脚和差分参考地引脚，4～6个晶振引脚，供电控制，内存（近7代Intel处理器/938接口以后AMD处理器），南桥/北桥接口，debug，内置显卡输出（如果有），SoC的那种还会把原有的南北桥功能集成进去所以还会有GPIO控制器，I2c，spi，UART，SATA，PCI-E，PCI，i2s，PCM之类的接口</p>
+<p><img src="https://lemooooooon.github.io/post-images/1702967996192.jpg" alt="" loading="lazy"><br>
+北桥芯片（Northbridge）： 北桥处理高速信号。北桥芯片连接的设备都是高速传输设备，包含 CPU、GPU、存储器与南桥的通信。北桥芯片也是 CPU 与外部连接的纽带；<br>
+南桥芯片（Southbridge）： 南桥处理低速信号。南桥芯片连接的大多是 I/O 设备，例如 PCI 总线、USB 适配器、显卡适配器、硬盘控制器；<br>
+内存控制器（Memory Controller）： 管理 CPU 和内存之间的总线数据传输，控制着存储器的读取和写入信号，并且定时刷新 DRAM 内的数据（DRAM 的存储单元包含电容，会自动漏电）；<br>
+内存总线（Memory Bus）： 连接北桥芯片与存储器的总线；<br>
+DMI 总线（Direct Media Interface）： 连接北桥芯片和南桥芯片的专用总线；<br>
+I/O 总线： 连接南桥芯片与 I/O 设备的总线；<br>
+PCI 局部总线： 连接高速 I/O 设备的标准；<br>
+ISA 局部总线： 连接低速 I/O 设备的标准。</p>
+<p><img src="https://lemooooooon.github.io/post-images/1702970284368.png" alt="" loading="lazy"><br>
+<img src="https://lemooooooon.github.io/post-images/1702970318241.webp" alt="" loading="lazy"><br>
+9900K大概可以分为5个部分：</p>
+<p>1、CPU核心：图中红框部分为一个核心，9900K一共有8个核心。早期的CPU其实就只有这么一个东西，但现在的CPU逐步发展，把一些周边的部件也集成在同一块半导体晶片上，因此传统的CPU就变成了现代CPU上的核心。此外，为了提高CPU的计算能力，单块CPU中的核心数量越来越多，就消费级市场来说，从2005第一款双核心CPU奔腾D发布到今天的单块CPU晶片有8个核心的i9-9900K。<br>
+2、三级缓存（Level 3 Cache，简写为L3、L3$、L3C、L3 Cache）：图中中间8个粉色块组成的三级缓存，用于临时存放内存中的一小部分数据。这里分成8小块，对应8个CPU核心。有时候L3也叫末级缓存（Last Level Cache，LLC），当然，对9900K这样具有三级缓存的CPU，L3才等同于LLC。有的老式CPU有的只有二级缓存，LLC就是L2；某些服务器使用的CPU有四级缓存，LLC则是指L4。<br>
+3、核心显卡：图中左边紫框部分，这个以后的文章中我们再介绍。<br>
+4、系统代理：图中右边绿色部分，这是负责连接CPU与其它部件的多个模块的集合。从上到下分别是：<br>
+（1）显示控制器：负责核心显卡输出；<br>
+（2）PCI-e控制器：负责CPU与外部IO设备连接，以后的文章我们会另外介绍；<br>
+（3）eDRAM控制器：这个其实9900K是没有的，某些定制型号会集成有特殊的内存，称为嵌入式动态随机访问存储（Embedded Dynamic Random-Access Memory, eDRAM）。一般来说eDRAM是作为核心显卡的专用显存使用，这个控制器就是负责从eDRAM读写数据的。<br>
+（4）内存控制器：负责CPU与内存连接，从内存中读写数据。<br>
+5、环形总线（RingBus）：把上面这些模块连接起来的，上图中标记着Ring的蓝色圈。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[个人简历]]></title>
+        <id>https://lemooooooon.github.io/post/ge-ren-jian-li/</id>
+        <link href="https://lemooooooon.github.io/post/ge-ren-jian-li/">
+        </link>
+        <updated>2023-12-15T10:53:00.000Z</updated>
+        <content type="html"><![CDATA[<p><img src="https://lemooooooon.github.io/post-images/1702637915791.png" alt="" loading="lazy"><br>
+网名：小青蛙<br>
+出生年：1996<br>
+毕业院校：中国海洋大学</p>
+<p>工作经历：<br>
+中科可控（2021.7-2023.7）--技术产品经理<br>
+广电五舟（2023.7至今）--国产化产品线经理i</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://lemooooooon.github.io/post/hello-gridea/</id>
+        <link href="https://lemooooooon.github.io/post/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="https://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>
